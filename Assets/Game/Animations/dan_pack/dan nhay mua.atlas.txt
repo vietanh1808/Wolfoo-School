@@ -1,0 +1,76 @@
+
+dan nhay mua.png
+size: 2662,1032
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 10
+  rotate: true
+  xy: 2446, 34
+  size: 243, 139
+  orig: 243, 139
+  offset: 0, 0
+  index: -1
+Layer 11
+  rotate: false
+  xy: 2338, 279
+  size: 252, 153
+  orig: 252, 153
+  offset: 0, 0
+  index: -1
+Layer 12
+  rotate: false
+  xy: 1931, 8
+  size: 252, 163
+  orig: 252, 163
+  offset: 0, 0
+  index: -1
+Layer 13
+  rotate: false
+  xy: 1675, 2
+  size: 254, 169
+  orig: 254, 169
+  offset: 0, 0
+  index: -1
+Layer 14
+  rotate: false
+  xy: 2185, 73
+  size: 259, 175
+  orig: 259, 175
+  offset: 0, 0
+  index: -1
+Layer 15
+  rotate: false
+  xy: 2069, 250
+  size: 267, 182
+  orig: 267, 182
+  offset: 0, 0
+  index: -1
+Layer 16
+  rotate: false
+  xy: 1401, 2
+  size: 272, 169
+  orig: 272, 169
+  offset: 0, 0
+  index: -1
+den k nut
+  rotate: false
+  xy: 2, 23
+  size: 1397, 1007
+  orig: 1397, 1007
+  offset: 0, 0
+  index: -1
+trc dan
+  rotate: true
+  xy: 1401, 173
+  size: 857, 666
+  orig: 857, 666
+  offset: 0, 0
+  index: -1
+trc dan 1
+  rotate: true
+  xy: 2069, 434
+  size: 596, 591
+  orig: 596, 591
+  offset: 0, 0
+  index: -1

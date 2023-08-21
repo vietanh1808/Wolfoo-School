@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "307548286963",
+    "project_id": "wolfoo-school-4a995",
+    "storage_bucket": "wolfoo-school-4a995.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307548286963:android:873061767e87d3f444ac86",
+        "android_client_info": {
+          "package_name": "wolfoo.study.learning.abcalphabet.color.shape.preschool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "307548286963-541b4o3g12p3fqfdvcdnomgbiunq0fbf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWw2bHyu1Yz7Z4oHFNMGbq1fOXZJ2H_SQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "307548286963-541b4o3g12p3fqfdvcdnomgbiunq0fbf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "307548286963-0b34bgom83nfv2562r2dvc74avibbeb8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "wolfoo.study.learning.abcalphabet.color.shape.preschool"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

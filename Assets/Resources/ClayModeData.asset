@@ -1,0 +1,189 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2bbfed0dc2ce094ea4dc73e43a5922d, type: 3}
+  m_Name: ClayModeData
+  m_EditorClassIdentifier: 
+  traySprites:
+  - {fileID: 21300000, guid: 1f608ba9d290cf9429a38ba73e5189c2, type: 3}
+  - {fileID: 21300000, guid: 92a46f1a9d7e4f84685dc6f1b5783c30, type: 3}
+  - {fileID: 21300000, guid: 4527072c37f92e24fafcb746fe260448, type: 3}
+  - {fileID: 21300000, guid: 7dbf3ebe5e024674fb60d3dcf56ae466, type: 3}
+  lidSprites:
+  - {fileID: 21300000, guid: 08997888c56f88d4aa79f9d12e0120d9, type: 3}
+  - {fileID: 21300000, guid: 3d5399aa6ec32544482ea27c96e325b0, type: 3}
+  - {fileID: 21300000, guid: 9143f22f49101bc42b8fc6ad76a36803, type: 3}
+  - {fileID: 21300000, guid: 54e7d76bd206b2b4b82cd76d36d213b0, type: 3}
+  shapeFlowerItems:
+  - sprites:
+    - {fileID: 21300000, guid: 8b92fa6fb0d09364abd527ee2a7525e1, type: 3}
+    - {fileID: 21300000, guid: 48d3f84e11c9e5f41bfd90514a5d0d0b, type: 3}
+    - {fileID: 21300000, guid: 73359ad09f3e7d74eb22b4b9bdf83da9, type: 3}
+  - sprites:
+    - {fileID: 21300000, guid: 75590e682dadb464eb460d28f2bac944, type: 3}
+    - {fileID: 21300000, guid: 326fdc2e39727f540a17b22b9dfec959, type: 3}
+    - {fileID: 21300000, guid: 326fdc2e39727f540a17b22b9dfec959, type: 3}
+  - sprites:
+    - {fileID: 21300000, guid: c44a1a1856e03a3428a9c9fb4591e5ba, type: 3}
+    - {fileID: 21300000, guid: 518009da0b464434999af5085228aa0b, type: 3}
+    - {fileID: 21300000, guid: 19e78efdba1bab244bb2b17cf7984859, type: 3}
+  - sprites:
+    - {fileID: 21300000, guid: 7a49c9c5bb08cc74a8196bf5e99dbc86, type: 3}
+    - {fileID: 21300000, guid: 0e78488bd36066d49ad74b607c2ef9fe, type: 3}
+    - {fileID: 21300000, guid: ec95776c4f979ce4bb794ce419d03e92, type: 3}
+  stampedClayPbs:
+  - {fileID: -2501936866500628523, guid: 14081a300c3d75a43b25771314c4339b, type: 3}
+  - {fileID: -7883900535021333929, guid: 55777d3619d4f054f9a7e71c709f91af, type: 3}
+  - {fileID: 230619137928120118, guid: eab307e3200de5947b10002911d4bc57, type: 3}
+  - {fileID: -8759910427540889170, guid: a96129cd797f1e84a92d25c91b2615f2, type: 3}
+  flowerItems:
+  - trunkSprites:
+    - {fileID: 21300000, guid: a8f0d7b5959de164088c23b5d503699f, type: 3}
+    - {fileID: 21300000, guid: 92731ab31df99e04c9f567e370a1a9d0, type: 3}
+    - {fileID: 21300000, guid: b5b6e29c78de3294d8419c0ca231b73a, type: 3}
+    - {fileID: 21300000, guid: eb5aadc173c8bf448a556dd6f8674800, type: 3}
+    - {fileID: 21300000, guid: 4dc8f724a163d9747aafd6e976550fd6, type: 3}
+    leafSprites:
+    - {fileID: 21300000, guid: 4a13ec6d7e7ba6549ae9a29aea64dbfb, type: 3}
+    - {fileID: 21300000, guid: 934228e840a38b041916e0977c860cab, type: 3}
+    - {fileID: 21300000, guid: c33338191b5a431498c572c9cfb1dba2, type: 3}
+    petalSprites:
+    - {fileID: 21300000, guid: 1ea5dbf12c570874b9750e91d9f7ec8f, type: 3}
+    - {fileID: 21300000, guid: 8365bb3a59d23074bb2ed907615bca57, type: 3}
+    - {fileID: 21300000, guid: 679586e41f81db6498f5ca53ff4a620a, type: 3}
+    - {fileID: 21300000, guid: e44e72185f89994408ad555b935fb1ba, type: 3}
+    - {fileID: 21300000, guid: ee99f618ad7fafc49a2210bbe14484ef, type: 3}
+    - {fileID: 21300000, guid: 8cbb979bdd8e2b04faeb535c019f9e7d, type: 3}
+    - {fileID: 21300000, guid: 6a44e8288b48a1443a75669c99df05a2, type: 3}
+    - {fileID: 21300000, guid: f65582fa6220e804c9515f469d18cebc, type: 3}
+    pistilSprite: {fileID: 21300000, guid: d0ac2b90ef3cee14cae97c63138ec825, type: 3}
+    colorPetalSprites:
+    - {fileID: 21300000, guid: b8041b5dc47b24241bc4779bf6c34728, type: 3}
+    - {fileID: 21300000, guid: e4338a86b51b7ba46b9fde9cb765dc96, type: 3}
+    - {fileID: 21300000, guid: c32bfa2798e15524c93992e649b3d8d7, type: 3}
+    - {fileID: 21300000, guid: 169fa2e05679f7c42a3c5b66339ad89f, type: 3}
+    - {fileID: 21300000, guid: 70621fb9c58b95248bf8345b5a0f7a2d, type: 3}
+    - {fileID: 21300000, guid: 10dd2e0dce5ee934dbe45794ad435a31, type: 3}
+    - {fileID: 21300000, guid: 2b3648e6aeadc124fa46be1475d47b0c, type: 3}
+    - {fileID: 21300000, guid: 9b49ed5b9645b4141a5bc2b23de8e942, type: 3}
+    colorPistilSprite: {fileID: 21300000, guid: 000438d85e633644ca2612e022536aae, type: 3}
+    flowerPb: {fileID: 4078756446899452482, guid: a9e818b115c473447b5f2cf79cdeec77, type: 3}
+  - trunkSprites:
+    - {fileID: 21300000, guid: a8f0d7b5959de164088c23b5d503699f, type: 3}
+    - {fileID: 21300000, guid: 92731ab31df99e04c9f567e370a1a9d0, type: 3}
+    - {fileID: 21300000, guid: b5b6e29c78de3294d8419c0ca231b73a, type: 3}
+    - {fileID: 21300000, guid: eb5aadc173c8bf448a556dd6f8674800, type: 3}
+    - {fileID: 21300000, guid: 4dc8f724a163d9747aafd6e976550fd6, type: 3}
+    leafSprites:
+    - {fileID: 21300000, guid: 4a13ec6d7e7ba6549ae9a29aea64dbfb, type: 3}
+    - {fileID: 21300000, guid: 934228e840a38b041916e0977c860cab, type: 3}
+    - {fileID: 21300000, guid: c33338191b5a431498c572c9cfb1dba2, type: 3}
+    petalSprites:
+    - {fileID: 21300000, guid: 875c94f5fca952f4b8e59cf9cca62dc3, type: 3}
+    - {fileID: 21300000, guid: fa8c8c81174c19a4c9ab19df432a2730, type: 3}
+    - {fileID: 21300000, guid: 3f2ed2437312c714abb08aedc03289fc, type: 3}
+    - {fileID: 21300000, guid: c770f3bd924201c4cb7475ad7e417cc9, type: 3}
+    - {fileID: 21300000, guid: 3300eb9348dd62942a7b3ca7fd370dc8, type: 3}
+    - {fileID: 21300000, guid: 4b85c7ddbfe374b45be8787df914373e, type: 3}
+    - {fileID: 21300000, guid: 92ef4b919237eaf4b84c53571f0e9ecd, type: 3}
+    - {fileID: 21300000, guid: ffa638d3097ea9a4fb67fc6ae9c0ed33, type: 3}
+    pistilSprite: {fileID: 21300000, guid: 96707dce84e698b4f81a11312b2216a7, type: 3}
+    colorPetalSprites:
+    - {fileID: 21300000, guid: 101e1614d4658ac4aa631502a9f85c3e, type: 3}
+    - {fileID: 21300000, guid: 739bc5f388c2d4a42b37cd619d65d44f, type: 3}
+    - {fileID: 21300000, guid: df2d397c6fbc2d54ca20d6993d4a03fb, type: 3}
+    - {fileID: 21300000, guid: d1cdb5b239be393479239ee597d099d1, type: 3}
+    - {fileID: 21300000, guid: 6d4c4c8e2475e7a45ac09b52f1ffa7fe, type: 3}
+    - {fileID: 21300000, guid: 207ce99f25645b946a7b8f409e60c732, type: 3}
+    - {fileID: 21300000, guid: 778e93c249fac2f4b9b86e79da9b5640, type: 3}
+    - {fileID: 21300000, guid: 0d71b62a2e07596429c32fbbc8fb172d, type: 3}
+    colorPistilSprite: {fileID: 21300000, guid: fc5bd7e6c5f39774ca476a61266778a2, type: 3}
+    flowerPb: {fileID: 7789458988266757889, guid: 5b79fd55063a9c24f91df417d3162f06, type: 3}
+  - trunkSprites:
+    - {fileID: 21300000, guid: a8f0d7b5959de164088c23b5d503699f, type: 3}
+    - {fileID: 21300000, guid: 92731ab31df99e04c9f567e370a1a9d0, type: 3}
+    - {fileID: 21300000, guid: b5b6e29c78de3294d8419c0ca231b73a, type: 3}
+    - {fileID: 21300000, guid: eb5aadc173c8bf448a556dd6f8674800, type: 3}
+    - {fileID: 21300000, guid: 4dc8f724a163d9747aafd6e976550fd6, type: 3}
+    leafSprites:
+    - {fileID: 21300000, guid: 4a13ec6d7e7ba6549ae9a29aea64dbfb, type: 3}
+    - {fileID: 21300000, guid: 934228e840a38b041916e0977c860cab, type: 3}
+    - {fileID: 21300000, guid: c33338191b5a431498c572c9cfb1dba2, type: 3}
+    petalSprites:
+    - {fileID: 21300000, guid: 13c46f9aefc636b46984966b2ca4115a, type: 3}
+    - {fileID: 21300000, guid: 50bee9756a17ad949b149abfbdbdc5d7, type: 3}
+    - {fileID: 21300000, guid: 021f7166996a1384bbeac07ce096107f, type: 3}
+    - {fileID: 21300000, guid: 27890955d10bc184cb460eac32d614f0, type: 3}
+    - {fileID: 21300000, guid: 70f5504a058df554dbedb14f352c1fd4, type: 3}
+    pistilSprite: {fileID: 21300000, guid: 02e8ca409e0f03b439c7401f5a07c237, type: 3}
+    colorPetalSprites:
+    - {fileID: 21300000, guid: 9db47aeecf84b7f43bacf9e7dc94ed64, type: 3}
+    - {fileID: 21300000, guid: 127e57d2b5132b84b87f5ad2406c2a17, type: 3}
+    - {fileID: 21300000, guid: cb19ce6040d2fad4d9d80d7a07e3efa5, type: 3}
+    - {fileID: 21300000, guid: 85438c5c690cafc46a150d70b4856109, type: 3}
+    - {fileID: 21300000, guid: 3398c07e8c3db454fa8d44a4609509cd, type: 3}
+    colorPistilSprite: {fileID: 21300000, guid: 976dded9621802a4e9fbd80dd885d21d, type: 3}
+    flowerPb: {fileID: 3674951993048845649, guid: afa391675083b014fb4359ea8a7fe32c, type: 3}
+  - trunkSprites:
+    - {fileID: 21300000, guid: a8f0d7b5959de164088c23b5d503699f, type: 3}
+    - {fileID: 21300000, guid: 92731ab31df99e04c9f567e370a1a9d0, type: 3}
+    - {fileID: 21300000, guid: b5b6e29c78de3294d8419c0ca231b73a, type: 3}
+    - {fileID: 21300000, guid: eb5aadc173c8bf448a556dd6f8674800, type: 3}
+    - {fileID: 21300000, guid: 4dc8f724a163d9747aafd6e976550fd6, type: 3}
+    leafSprites:
+    - {fileID: 21300000, guid: 4a13ec6d7e7ba6549ae9a29aea64dbfb, type: 3}
+    - {fileID: 21300000, guid: 934228e840a38b041916e0977c860cab, type: 3}
+    - {fileID: 21300000, guid: c33338191b5a431498c572c9cfb1dba2, type: 3}
+    petalSprites:
+    - {fileID: 21300000, guid: 5b3fa0ef959e4b6489a0e7b05dbda42a, type: 3}
+    - {fileID: 21300000, guid: 9cb344a25a800034c96c3ce021ca877f, type: 3}
+    - {fileID: 21300000, guid: 24ec87d82c28194499083280512c6103, type: 3}
+    - {fileID: 21300000, guid: 55b9edff6bcd7f1469db4bd70f72ce4d, type: 3}
+    - {fileID: 21300000, guid: 559e8a4b3c3ce174dbaafe9cfbfbbc2c, type: 3}
+    - {fileID: 21300000, guid: 3893837bd67e5064fb4d45c657ff3619, type: 3}
+    - {fileID: 21300000, guid: f7a58b62c5da8ec4ebf95937425ee870, type: 3}
+    - {fileID: 21300000, guid: c036ddaac367ac04f9dbe4658f4458b6, type: 3}
+    pistilSprite: {fileID: 21300000, guid: f5d8deab73c42c04d8d1019da6c11949, type: 3}
+    colorPetalSprites:
+    - {fileID: 21300000, guid: c9ec31d0fbc30ee40a8a359c3e14124d, type: 3}
+    - {fileID: 21300000, guid: cc0e569b2cd36cc459f92d357e613596, type: 3}
+    - {fileID: 21300000, guid: 769f1501f3d21f94eaf1670edf02dc25, type: 3}
+    - {fileID: 21300000, guid: ec356a1a606a79541aa8754d16856e76, type: 3}
+    - {fileID: 21300000, guid: aabef3dffefaeb84eabb3b53aeffefaf, type: 3}
+    - {fileID: 21300000, guid: 8d770ea4a81dcd644ac228b6295cb12e, type: 3}
+    - {fileID: 21300000, guid: c8297c50834d2b64590cb996bec55c62, type: 3}
+    - {fileID: 21300000, guid: 39cfc8818c318b0488325afcddce3032, type: 3}
+    colorPistilSprite: {fileID: 21300000, guid: 0518b13ee592bc74a9f5fc7fc3e68145, type: 3}
+    flowerPb: {fileID: 7586777487526015090, guid: 93973d1171b9147478a2c2941a1c982c, type: 3}
+  potSprites:
+  - {fileID: 21300000, guid: 78ddf2d5b9f2c7b4289f2970624a6164, type: 3}
+  - {fileID: 21300000, guid: 683a1d402e5de704a9c695999001162e, type: 3}
+  - {fileID: 21300000, guid: 6eba000f7a6c75446929962e712b53b1, type: 3}
+  - {fileID: 21300000, guid: 063f746ab0d617747ba0c4f5b39e922a, type: 3}
+  - {fileID: 21300000, guid: 65285cb5f5fab7b4a87bae6a41f8dfef, type: 3}
+  potMaskSprites:
+  - {fileID: 21300000, guid: 89d09bc7e8efa0b4fae10599fee19f6a, type: 3}
+  - {fileID: 21300000, guid: 5df0524abf24d8844b1f01892ef96c3e, type: 3}
+  - {fileID: 21300000, guid: 99c9364ef5272a84896f7deac711e0c3, type: 3}
+  - {fileID: 21300000, guid: 9e6012f3e62b0454e82794c9679909f9, type: 3}
+  - {fileID: 21300000, guid: 94d89434a85b9774b8ad2153a0983d30, type: 3}
+  localMaskPos:
+  - {x: -3, y: -45}
+  - {x: 0, y: -4}
+  - {x: -1, y: 2}
+  - {x: -1, y: 5}
+  - {x: 0, y: -11}
+  localFlowerPos:
+  - {x: 75, y: 900}
+  - {x: -95, y: 900}
+  - {x: 35, y: 900}
+  - {x: -60, y: 900}
+  - {x: 70, y: 900}

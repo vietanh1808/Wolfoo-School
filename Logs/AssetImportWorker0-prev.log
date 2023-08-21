@@ -1,0 +1,1048 @@
+Using pre-set license
+Built from 'master' branch; Version is '2020.3.36f1 (71f96b79b9f0) revision 7469419'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19044) 64bit Professional' Language: 'en' Physical Memory: 16280 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+D:\Unity\Hub\Editor\2020.3.36f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Document/Project Unity/Wolfoo School Repo
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+65058
+Successfully changed project path to: D:/Document/Project Unity/Wolfoo School Repo
+D:/Document/Project Unity/Wolfoo School Repo
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 98.83 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.36f1 (71f96b79b9f0)
+[Subsystems] Discovering subsystems at path D:/Unity/Hub/Editor/2020.3.36f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Document/Project Unity/Wolfoo School Repo/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 3GB (ID=0x1b84)
+    Vendor:   
+    VRAM:     2988 MB
+    Driver:   30.0.15.1215
+Initialize mono
+Mono path[0] = 'D:/Unity/Hub/Editor/2020.3.36f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity/Hub/Editor/2020.3.36f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/Unity/Hub/Editor/2020.3.36f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56372
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/Hub/Editor/2020.3.36f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000820 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 85.51 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.566 seconds
+Domain Reload Profiling:
+	ReloadAssembly (566ms)
+		BeginReloadAssembly (52ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (456ms)
+			LoadAssemblies (51ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (133ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (204ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (86ms)
+				BeforeProcessingInitializeOnLoad (14ms)
+				ProcessInitializeOnLoadAttributes (76ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.008749 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 81.59 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.208 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1209ms)
+		BeginReloadAssembly (129ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (16ms)
+		EndReloadAssembly (1032ms)
+			LoadAssemblies (96ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (306ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (56ms)
+			SetupLoadedEditorAssemblies (407ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (82ms)
+				BeforeProcessingInitializeOnLoad (83ms)
+				ProcessInitializeOnLoadAttributes (163ms)
+				ProcessInitializeOnLoadMethodAttributes (74ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'TextMeshPro/Distance Field (UIHsvModifier)': fallback shader 'TextMeshPro/Mobile/Distance Field (UIHsv)' not found
+Shader 'TextMeshPro/Distance Field (UIHsvModifier)': fallback shader 'TextMeshPro/Mobile/Distance Field (UIHsv)' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
+Refreshing native plugins compatible for Editor in 1.38 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3417 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 216.4 MB.
+System memory in use after: 214.6 MB.
+
+Unloading 176 unused Assets to reduce memory usage. Loaded Objects now: 3781.
+Total: 7.550100 ms (FindLiveObjects: 0.244000 ms CreateObjectMapping: 0.148300 ms MarkObjects: 6.067000 ms  DeleteObjects: 1.090100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Game/Art/ghep tranh/manh ghep/5.png
+  artifactKey: Guid(64b54013705a77e48ab4dba0d9c74363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/manh ghep/5.png using Guid(64b54013705a77e48ab4dba0d9c74363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4dae134cd6bc8074a943d9fbba559b7') in 0.185720 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Game/Art/ghep tranh/back cam.png
+  artifactKey: Guid(226ff15e527f2a24fa0c4f81213ebeb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/back cam.png using Guid(226ff15e527f2a24fa0c4f81213ebeb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe74d2642aef4f5ebb12ae16afdd8051') in 0.121366 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000152 seconds.
+  path: Assets/Game/Art/ghep tranh/bang ghep tim.png
+  artifactKey: Guid(a066be5dfda8b3b45ab217bd4a926747) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/bang ghep tim.png using Guid(a066be5dfda8b3b45ab217bd4a926747) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbedb0529620392cdf79674232b1fecf') in 0.080350 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Game/Art/ghep tranh/bang ghep hong.png
+  artifactKey: Guid(0d4b3813958b6014581103a54b7e1713) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/bang ghep hong.png using Guid(0d4b3813958b6014581103a54b7e1713) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7ccf444a22af7f5e680a207a834066f') in 0.059393 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/Game/Art/ABC Upcase/B1.png
+  artifactKey: Guid(4d13204eb44536847a5096d1322226f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ABC Upcase/B1.png using Guid(4d13204eb44536847a5096d1322226f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70f0c520836a42afe4a109bc8d91d446') in 0.059478 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000276 seconds.
+  path: Assets/Game/Art/ABC Upcase/B2.png
+  artifactKey: Guid(cca180c5fc7680e4aa71e316d06c8e95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ABC Upcase/B2.png using Guid(cca180c5fc7680e4aa71e316d06c8e95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9c9eb88acb7de343f7c1087efc9f013') in 0.069012 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/Game/Art/balo/cap hong dong1.png
+  artifactKey: Guid(6cabafc1c46b687488cdccbfc14cbbd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/balo/cap hong dong1.png using Guid(6cabafc1c46b687488cdccbfc14cbbd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5b60e9743052cad01fbf4c994087e0c') in 0.054366 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/Game/Art/ghep tranh/back tim.png
+  artifactKey: Guid(2618a66d69bcc2141a311aef1391579e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/back tim.png using Guid(2618a66d69bcc2141a311aef1391579e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd12853f075edc326d568f5e71bd33cfa') in 0.131387 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/Game/Art/ghep tranh/manh ghep/7.png
+  artifactKey: Guid(ec524bf1415127f41a4cc873b69ca600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/manh ghep/7.png using Guid(ec524bf1415127f41a4cc873b69ca600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f1d3beaf641f5d58aeff2d75bbb862f') in 0.074767 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Game/Art/ghep tranh/manh ghep/11.png
+  artifactKey: Guid(102f54561e2e6984d930461533121eab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/manh ghep/11.png using Guid(102f54561e2e6984d930461533121eab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3bb4fe06b91b6497d9b9d00ef0db3b9') in 0.059239 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/Game/Art/balo/cap xanh dong.png
+  artifactKey: Guid(1effa8d89cecfdb4babaaa68ef3a0572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/balo/cap xanh dong.png using Guid(1effa8d89cecfdb4babaaa68ef3a0572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80de7d9dacc288253c90de8dde15ea4e') in 0.051091 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/Game/Art/ghep tranh/manh ghep/4.png
+  artifactKey: Guid(f135f0a7c8fe9184ca479988088d7642) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/manh ghep/4.png using Guid(f135f0a7c8fe9184ca479988088d7642) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f3345892a7c8e10c625e5f542dc2445') in 0.079317 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Game/Art/balo/cap xanh mo 2.png
+  artifactKey: Guid(2d0d76060d3c4e6428b431657c348185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/balo/cap xanh mo 2.png using Guid(2d0d76060d3c4e6428b431657c348185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a86e19a654a76e783b56ed227ff0c302') in 0.070474 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Game/Art/ABC Upcase/D.png
+  artifactKey: Guid(eadef7c1936f2084c89a73595a8a79e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ABC Upcase/D.png using Guid(eadef7c1936f2084c89a73595a8a79e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a78456c2472d2f8ed78951ccfa78f87') in 0.070271 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Game/Art/ABC Upcase/B3.png
+  artifactKey: Guid(69bfc952132dee342a21db3c73dc8cdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ABC Upcase/B3.png using Guid(69bfc952132dee342a21db3c73dc8cdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d31a6b4d69f48e9dc3fb9459f9d5eac') in 0.041184 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/Game/Art/ghep tranh/back x duong.png
+  artifactKey: Guid(cbbbbc75e43b6dd49ba27b8c5a4d8d2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/back x duong.png using Guid(cbbbbc75e43b6dd49ba27b8c5a4d8d2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd950bc81d4708e026d9d53c9250eeea7') in 0.083228 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Game/Art/ghep tranh/manh ghep/1.png
+  artifactKey: Guid(d415dae1e946fe643866fab56547386d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/manh ghep/1.png using Guid(d415dae1e946fe643866fab56547386d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f740c6a3e2f8e98e4f4bbd2554f7971') in 0.092476 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000310 seconds.
+  path: Assets/Game/Art/ghep tranh/back xanh.png
+  artifactKey: Guid(93e9e9630f6f50740903b4021a77946f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/back xanh.png using Guid(93e9e9630f6f50740903b4021a77946f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19c5cebc398e40efd5135b94b6ed9fbb') in 0.067592 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Game/Art/balo/cap hong mo.png
+  artifactKey: Guid(fbd2452404b062948a0fc1448263e336) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/balo/cap hong mo.png using Guid(fbd2452404b062948a0fc1448263e336) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf69313a05a2cd3c7fe3c4bd02ef639e') in 0.046962 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/Game/Art/ABC Upcase/A1.png
+  artifactKey: Guid(c17202932607edf41b49e17f6d5cbe66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ABC Upcase/A1.png using Guid(c17202932607edf41b49e17f6d5cbe66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4f8494b6072767bed4db39fa2590957') in 0.062955 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/Game/Art/balo/cap hong mo 1.png
+  artifactKey: Guid(45af568a5977e394786be442cf446cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/balo/cap hong mo 1.png using Guid(45af568a5977e394786be442cf446cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56f48961880428357f2faf8577db7d3b') in 0.062371 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Game/Art/ABC Upcase/B.png
+  artifactKey: Guid(cca2298fbf481284682d418f7dbf8de4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ABC Upcase/B.png using Guid(cca2298fbf481284682d418f7dbf8de4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7314a50dabf0f5f0b36a581f251732c') in 0.079255 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/Game/Art/balo/cap vang 1.png
+  artifactKey: Guid(83a1da9a5cca1a44996cdb4b91bd663e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/balo/cap vang 1.png using Guid(83a1da9a5cca1a44996cdb4b91bd663e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ee9d8c86c9e7ef9d9b1becfa8ec5127') in 0.049726 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/Game/Art/art cap nhật/back map3 demo.png
+  artifactKey: Guid(5a8e3893a8fa9e1458ed713dc4036f57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/art cap nhật/back map3 demo.png using Guid(5a8e3893a8fa9e1458ed713dc4036f57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d24f57f5086401b55d3ad2a6c6cf7c7') in 0.104565 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Game/Art/balo/cap vang dong 2.png
+  artifactKey: Guid(aabdad2a511444f4e93e5b9da362a9c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/balo/cap vang dong 2.png using Guid(aabdad2a511444f4e93e5b9da362a9c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '219c5b6c8a2a451b44a814de003bceb1') in 0.063359 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/Game/Art/ghep tranh/manh ghep/9.png
+  artifactKey: Guid(85b4c25c85324714a9d6c351a5fe418d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/manh ghep/9.png using Guid(85b4c25c85324714a9d6c351a5fe418d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b97f5573420574518fb74020af8b596f') in 0.072178 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000149 seconds.
+  path: Assets/Game/Art/ABC Upcase/C1.png
+  artifactKey: Guid(dbacd28587863124e94a83f045b52bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ABC Upcase/C1.png using Guid(dbacd28587863124e94a83f045b52bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09bbef90c65b9b399adce88fac8fe685') in 0.069764 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Game/Art/ghep tranh/manh ghep/10.png
+  artifactKey: Guid(2c614ff1b02dbdd4eaa6b7a8ac9cf75c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/manh ghep/10.png using Guid(2c614ff1b02dbdd4eaa6b7a8ac9cf75c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3821010b178fdbe4d8c60d08551e8ea9') in 0.059455 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000154 seconds.
+  path: Assets/Game/Art/ABC Upcase/A2.png
+  artifactKey: Guid(35c39eb83da38fc48998ff7c4c68ba0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ABC Upcase/A2.png using Guid(35c39eb83da38fc48998ff7c4c68ba0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9844bfa5712a16bacd7a30b22d5086fb') in 0.064688 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Game/Art/art cap nhật/butoon.png
+  artifactKey: Guid(3eb45a58ef610e84a965bfc0b89a83c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/art cap nhật/butoon.png using Guid(3eb45a58ef610e84a965bfc0b89a83c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d27acdcce3f2acbb23a0b38257ee218') in 0.048378 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Game/Art/ghep tranh/back hong.png
+  artifactKey: Guid(de900cb133de9a9418e00e10fe443fd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/back hong.png using Guid(de900cb133de9a9418e00e10fe443fd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df559a2709fde857529a89c5f51965e7') in 0.092547 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/Game/Art/ghep tranh/manh ghep/6.png
+  artifactKey: Guid(22d294c3830e1f14fb1a95619f9b9833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/manh ghep/6.png using Guid(22d294c3830e1f14fb1a95619f9b9833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05e06416465da6ed741fa4a3ae6de0b8') in 0.070445 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Game/Art/ghep tranh/bang ghep xanh-1.png
+  artifactKey: Guid(5319ce8c3fa185349afe58ba9ab3f9f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/bang ghep xanh-1.png using Guid(5319ce8c3fa185349afe58ba9ab3f9f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5762760a47b8f4f9fc711090dcd20741') in 0.061393 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Game/Art/art cap nhật/Layer 256.png
+  artifactKey: Guid(d1aa43e5564b80f4e82060ae6f85172a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/art cap nhật/Layer 256.png using Guid(d1aa43e5564b80f4e82060ae6f85172a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7447a9f93e1bf5215f742105fc8ea1b5') in 0.100528 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000121 seconds.
+  path: Assets/Game/Art/balo/cap xanh dong 1.png
+  artifactKey: Guid(67ba5cd0853c3714fb250695c2a33ad3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/balo/cap xanh dong 1.png using Guid(67ba5cd0853c3714fb250695c2a33ad3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0af0e1db4ca543a2c3b814ca53c0ea5') in 0.040893 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/Game/Art/balo/cap hong.png
+  artifactKey: Guid(ac32dd7dfa8f4774a88de36a0b0906b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/balo/cap hong.png using Guid(ac32dd7dfa8f4774a88de36a0b0906b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6cc490cda2eccc2cceec2a7d35c1b0b') in 0.034492 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Game/Art/ghep tranh/bang ghep nau.png
+  artifactKey: Guid(88ed8c6209dfc914d8a3f2472b6d25f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/bang ghep nau.png using Guid(88ed8c6209dfc914d8a3f2472b6d25f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41c84e597e16316981d8eb4fc2dd3c04') in 0.061848 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/Game/Art/balo/cap xanh mo.png
+  artifactKey: Guid(15b084b58e8a110458c3349ec8bb8584) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/balo/cap xanh mo.png using Guid(15b084b58e8a110458c3349ec8bb8584) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bca91f817bc1216dd5584ae58a6f1ea') in 0.086176 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Game/Art/ABC Upcase/A.png
+  artifactKey: Guid(5a35cf33f5f061f49a89e6f090fab3eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ABC Upcase/A.png using Guid(5a35cf33f5f061f49a89e6f090fab3eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70108011c1660e8f6ded5e1ff1390846') in 0.032556 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/Game/Art/ABC Upcase/A3.png
+  artifactKey: Guid(31bd12a8821616342bc284268be30739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ABC Upcase/A3.png using Guid(31bd12a8821616342bc284268be30739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91946cc3d9eeeebe84fddf2aebdd5101') in 0.049380 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000294 seconds.
+  path: Assets/Game/Art/ABC Upcase/C.png
+  artifactKey: Guid(abc037ef934760241a382fa0f28baf0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ABC Upcase/C.png using Guid(abc037ef934760241a382fa0f28baf0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45f90ab4179ba52805a9f47c4a98357f') in 0.107137 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000159 seconds.
+  path: Assets/Game/Art/ghep tranh/manh ghep/3.png
+  artifactKey: Guid(c6344955a4c5c2f4f998faa3c9f7782d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/manh ghep/3.png using Guid(c6344955a4c5c2f4f998faa3c9f7782d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd16c9165be11dd58697098e40a01b93c') in 0.071369 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/Game/Art/ghep tranh/manh ghep/8.png
+  artifactKey: Guid(b0c96f76b1e7b0745a1a6dbd981daebd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/manh ghep/8.png using Guid(b0c96f76b1e7b0745a1a6dbd981daebd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b5f0b11143231236ab37afb22740376') in 0.055248 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Game/Art/ghep tranh/manh ghep/2.png
+  artifactKey: Guid(28e8fb1ce4edf9b40baca254b7814341) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ghep tranh/manh ghep/2.png using Guid(28e8fb1ce4edf9b40baca254b7814341) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9af9a175311ec922fcf3c690b68777d3') in 0.349577 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.663861 seconds.
+  path: Assets/Game/Art/ui/ads not ready.png
+  artifactKey: Guid(b4f5eadca82c86948b92d5012311932b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/ads not ready.png using Guid(b4f5eadca82c86948b92d5012311932b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af799697e841ca371496784adf861c9f') in 0.116062 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000157 seconds.
+  path: Assets/Game/Art/ui/comming soon.png
+  artifactKey: Guid(410a015d5dcc3d0478b5066e9d0b7b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/comming soon.png using Guid(410a015d5dcc3d0478b5066e9d0b7b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26c4a6b7018464158f35cfde40ee2062') in 0.079841 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Game/Art/ui/clear.png
+  artifactKey: Guid(00939bb4fe5f14f4a8999d94b2daed4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/clear.png using Guid(00939bb4fe5f14f4a8999d94b2daed4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74f28fe905a1fab8401f280466325b6c') in 0.062880 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/Game/Art/ui/bang.png
+  artifactKey: Guid(91460a249ec090341a8996c75571d408) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/bang.png using Guid(91460a249ec090341a8996c75571d408) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae4d0ff1ac3dadf0cfdbd97a8aae58f8') in 0.090998 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Game/Art/ui/ADS.png
+  artifactKey: Guid(f5558d2095df42e4994a32bcf7d7025c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/ADS.png using Guid(f5558d2095df42e4994a32bcf7d7025c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c393969e64290cc08df2f1ebd262fdba') in 0.104342 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000158 seconds.
+  path: Assets/Game/Art/ui/buy.png
+  artifactKey: Guid(e9701a24dd2f08b448f1f46430851e4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/buy.png using Guid(e9701a24dd2f08b448f1f46430851e4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f74edcb2e1dc485cb886690623df8761') in 0.074469 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000155 seconds.
+  path: Assets/Game/Art/ui/Coin.png
+  artifactKey: Guid(707c450fc054f8b43aaf989bb569f6e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/Coin.png using Guid(707c450fc054f8b43aaf989bb569f6e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fead08a378b3e2a5ddaab3680c0692d') in 0.075983 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Game/Art/ui/arrowhead.png
+  artifactKey: Guid(9423f7231b0b0b240be9054926a0d9e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/arrowhead.png using Guid(9423f7231b0b0b240be9054926a0d9e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77d78df1cecda7fcdcf646dfa2e48a46') in 0.041283 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Game/Art/ui/brush.png
+  artifactKey: Guid(5b37faf67d346964a947ebdca2033532) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/brush.png using Guid(5b37faf67d346964a947ebdca2033532) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c7144edad35536d8c54d746c305cd5c') in 0.067415 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Game/Art/ui/back.png
+  artifactKey: Guid(841b98beeae734d428e891a6a73d3e9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/back.png using Guid(841b98beeae734d428e891a6a73d3e9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84cb47d64fe310fd84b8920543f8e8dc') in 0.057828 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.414991 seconds.
+  path: Assets/Game/Art/ui/deco.png
+  artifactKey: Guid(231da24184317ca4187e6ce98c7272b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/deco.png using Guid(231da24184317ca4187e6ce98c7272b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b79ab11d4a2002493a2e56ed3bf7e11b') in 0.073880 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Game/Art/ui/image.png
+  artifactKey: Guid(b76d97b59c9bd7e42a1c5b0faaa7eb9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/image.png using Guid(b76d97b59c9bd7e42a1c5b0faaa7eb9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac4dc6a17cc327656e256d27b22ad6c2') in 0.088270 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/Game/Art/ui/home.png
+  artifactKey: Guid(e005ae25d1e3aa64f91c2a8fe0ac5594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/home.png using Guid(e005ae25d1e3aa64f91c2a8fe0ac5594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c60d35b714c4408b07dd094266451619') in 0.058570 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/Game/Art/ui/Layer 67.png
+  artifactKey: Guid(d5dd52ab3df338e4d8438091e7cf3ada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/Layer 67.png using Guid(d5dd52ab3df338e4d8438091e7cf3ada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd117570a438e6984802032bdeb4101c6') in 0.072131 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Game/Art/ui/lose.png
+  artifactKey: Guid(5d9150f1bf4502a4e8d4ce6932e4ba2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/lose.png using Guid(5d9150f1bf4502a4e8d4ce6932e4ba2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c08736b9537005eb18138ed9802e284') in 0.073783 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000286 seconds.
+  path: Assets/Game/Art/ui/LockAds.png
+  artifactKey: Guid(f5e34c4f9fd653c47970128fc98e44a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/LockAds.png using Guid(f5e34c4f9fd653c47970128fc98e44a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e42b86cf4a9d47e1bdfb2ad06c61d414') in 0.074131 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000157 seconds.
+  path: Assets/Game/Art/ui/Layer 16.png
+  artifactKey: Guid(6353ab577f32928448922274f8a3f2c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/Layer 16.png using Guid(6353ab577f32928448922274f8a3f2c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd52868f905a7822e470ca9767e6e583a') in 0.060177 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Game/Art/ui/go.png
+  artifactKey: Guid(b5ffb237637527d498d5d38c558c9e7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/go.png using Guid(b5ffb237637527d498d5d38c558c9e7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '449c14103719d41d56e9789ce17e1cb3') in 0.076233 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/Game/Art/ui/music.png
+  artifactKey: Guid(f5fedfa23b1468a489f068a2d1d818c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/music.png using Guid(f5fedfa23b1468a489f068a2d1d818c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8346a9a68d3fbd0a53d1e52cd49e9803') in 0.075373 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/Game/Art/ui/more character.png
+  artifactKey: Guid(ca57471c05568c74db52f8eb29effaa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/more character.png using Guid(ca57471c05568c74db52f8eb29effaa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acd7e79577216c6952ea360452df85e8') in 0.071046 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.171431 seconds.
+  path: Assets/Game/Art/ui/icon/icon dang ky ban quyen.png
+  artifactKey: Guid(f8d2c679e9a3c2742b6cff3867d983b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/icon/icon dang ky ban quyen.png using Guid(f8d2c679e9a3c2742b6cff3867d983b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '402d22c55ab364b15375f8ef47505fd5') in 0.022622 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.776989 seconds.
+  path: Assets/Game/Art/ui/icon/icon dang ky ban quyen.png
+  artifactKey: Guid(f8d2c679e9a3c2742b6cff3867d983b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/ui/icon/icon dang ky ban quyen.png using Guid(f8d2c679e9a3c2742b6cff3867d983b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aff8c73a3fb5e49658c403042167327b') in 0.023029 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.381987 seconds.
+  path: Assets/Game/Art/mini6_ cào chữ/back.png
+  artifactKey: Guid(9c8f7f22134ea1e4cab302752831b7f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini6_ cào chữ/back.png using Guid(9c8f7f22134ea1e4cab302752831b7f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c9458f6bdb7471b385f88ffb6ff1683') in 0.110527 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/Game/Art/mini6_ cào chữ/cao.png
+  artifactKey: Guid(39a0fca47f9841c4db5fd9266ba1095e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini6_ cào chữ/cao.png using Guid(39a0fca47f9841c4db5fd9266ba1095e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83635bdad3d7f982126394b4a7fc02d8') in 0.034645 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Game/Art/mini6_ cào chữ/saukhay.png
+  artifactKey: Guid(55d128607962bf04a9f71dc15db5f846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini6_ cào chữ/saukhay.png using Guid(55d128607962bf04a9f71dc15db5f846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad9cb1d5a763723e2d9fdb0d2de0d8c3') in 0.041488 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/Game/Art/mini6_ cào chữ/trc khay.png
+  artifactKey: Guid(99df83563203e5b4ab6687343abee0df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini6_ cào chữ/trc khay.png using Guid(99df83563203e5b4ab6687343abee0df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb7804a4207f098e83079dd987e8305f') in 0.037598 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000164 seconds.
+  path: Assets/Game/Art/mini6_ cào chữ/day.png
+  artifactKey: Guid(2571b13d717caef4c863a0af9ab1081c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini6_ cào chữ/day.png using Guid(2571b13d717caef4c863a0af9ab1081c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1502e86287283562aebd238e2fbf8827') in 0.045634 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Game/Art/mini6_ cào chữ/bang.png
+  artifactKey: Guid(a7e2aea13ede62148b249ef194233f9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini6_ cào chữ/bang.png using Guid(a7e2aea13ede62148b249ef194233f9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0889f0a09ed2cac4fbb041c3c893d9d') in 0.051846 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000158 seconds.
+  path: Assets/Game/Art/mini6_ cào chữ/cao có bong.png
+  artifactKey: Guid(1f7e749ab1a139f47845e407c149e223) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini6_ cào chữ/cao có bong.png using Guid(1f7e749ab1a139f47845e407c149e223) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b0ad1261f7db55ee5ec01aae765a851') in 0.040978 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Game/Art/mini4_trang trí hoa quả/Fruits/bi ngo.png
+  artifactKey: Guid(63fd41d45f070aa4092c71cd0f281a8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini4_trang trí hoa quả/Fruits/bi ngo.png using Guid(63fd41d45f070aa4092c71cd0f281a8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79437a1624c56aeacfe4bf0d52055cc1') in 0.048973 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000159 seconds.
+  path: Assets/Game/Art/mini4_trang trí hoa quả/Fruits/Sau Rieng.png
+  artifactKey: Guid(36b3f49aad5cb0f4ba923da364b9d984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini4_trang trí hoa quả/Fruits/Sau Rieng.png using Guid(36b3f49aad5cb0f4ba923da364b9d984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94c8b9f1b34f96fc15906a5fc305eb65') in 0.058309 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/Game/Art/mini4_trang trí hoa quả/Fruits/cam.png
+  artifactKey: Guid(ed278971a7aaf4d4192b4c9b84a3caac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini4_trang trí hoa quả/Fruits/cam.png using Guid(ed278971a7aaf4d4192b4c9b84a3caac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2e47cb1ec10a4b5c66e1c48431c5327') in 0.056364 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/Game/Art/mini4_trang trí hoa quả/coc mat.png
+  artifactKey: Guid(d793ec9f687c3974aa80e4fe8b9a3b16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini4_trang trí hoa quả/coc mat.png using Guid(d793ec9f687c3974aa80e4fe8b9a3b16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96c909bff1cae07db077ab534a6b73ba') in 0.054199 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/Game/Art/mini4_trang trí hoa quả/mat 1.png
+  artifactKey: Guid(05f1f3079b43f604b89a7a79849cc838) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini4_trang trí hoa quả/mat 1.png using Guid(05f1f3079b43f604b89a7a79849cc838) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '076a10db4a2610d1607f2da6c00e70a3') in 0.106257 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Game/Art/mini 3_ Phép toán/tru.png
+  artifactKey: Guid(1b531cd3a8fe4764b9363cfc33a85332) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 3_ Phép toán/tru.png using Guid(1b531cd3a8fe4764b9363cfc33a85332) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec4839ec861930104d81faf45a9b79bc') in 0.032120 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/Papers/xanh.png
+  artifactKey: Guid(7eb5c28ec8c420e4eb0e37b2fa82118f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/Papers/xanh.png using Guid(7eb5c28ec8c420e4eb0e37b2fa82118f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2064db1540c6275bc9a8008998e9aa47') in 0.087482 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000145 seconds.
+  path: Assets/Game/Art/mini 3_ Phép toán/dung sai.png
+  artifactKey: Guid(20af4eb764929f541814aa34b8cb81b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 3_ Phép toán/dung sai.png using Guid(20af4eb764929f541814aa34b8cb81b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a541961ef5749e7d570b1072e8cac82c') in 0.032045 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000158 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/hop vang.png
+  artifactKey: Guid(c5c41f80ffe452e4cb6fd03d2281e820) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/hop vang.png using Guid(c5c41f80ffe452e4cb6fd03d2281e820) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1ee35eb8ccf58577c92548dc0a5c591') in 0.074594 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/truvuong do.png
+  artifactKey: Guid(812a5b5c4d6683546984b058d0c94473) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/truvuong do.png using Guid(812a5b5c4d6683546984b058d0c94473) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba76a09155946f7cc3e687d9988ad51d') in 0.089123 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/hinhtruvang.png
+  artifactKey: Guid(1daec70d9f516cb4681a035d6b6f6e86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/hinhtruvang.png using Guid(1daec70d9f516cb4681a035d6b6f6e86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc00411fe528569ff6601a594b077572') in 0.109948 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/trudovang.png
+  artifactKey: Guid(3937a56fe85e18341b3061ea4434762b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/trudovang.png using Guid(3937a56fe85e18341b3061ea4434762b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd76daaa5d58f021ef4b191f432f594c') in 0.089734 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/trudoxanh duong.png
+  artifactKey: Guid(d68fcbe27aa70c74895007b0758792dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/trudoxanh duong.png using Guid(d68fcbe27aa70c74895007b0758792dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5837266e9057895b51f3c4f949346bb0') in 0.065197 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Game/Art/mini 3_ Phép toán/khayxanh.png
+  artifactKey: Guid(a355f1e5469679d47be54a7a34b6f891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 3_ Phép toán/khayxanh.png using Guid(a355f1e5469679d47be54a7a34b6f891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53b668a04be2c40d3898621aea39b325') in 0.039297 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/Game/Art/mini4_trang trí hoa quả/Fruits/sip lo.png
+  artifactKey: Guid(1f0053a40d6c6a74794d4ee1afada148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini4_trang trí hoa quả/Fruits/sip lo.png using Guid(1f0053a40d6c6a74794d4ee1afada148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92c3af2d90e4093c035ebb554f78a173') in 0.059226 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Game/Art/mini4_trang trí hoa quả/Fruits/chuoi.png
+  artifactKey: Guid(647ab3de8d4af6a48be23776e678fd75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini4_trang trí hoa quả/Fruits/chuoi.png using Guid(647ab3de8d4af6a48be23776e678fd75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '783b85234a5871453a0ebc0881ab3583') in 0.097182 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/Game/Art/mini 3_ Phép toán/back.png
+  artifactKey: Guid(5d2aa50a4c743274ab4a763ec0716a7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 3_ Phép toán/back.png using Guid(5d2aa50a4c743274ab4a763ec0716a7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ac5ea1e6375e54d71f2b839fafcbb60') in 0.048089 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/Papers/do.png
+  artifactKey: Guid(51c319722a0b29a409422cdbb730f78a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/Papers/do.png using Guid(51c319722a0b29a409422cdbb730f78a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfa83f1f5c9956cc2daac469c752ab03') in 0.122400 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000159 seconds.
+  path: Assets/Game/Art/mini 3_ Phép toán/1 (3).png
+  artifactKey: Guid(d86527e5001c19f4da563d55c5fb7031) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 3_ Phép toán/1 (3).png using Guid(d86527e5001c19f4da563d55c5fb7031) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbcdd1c4208015620b6bee3cabd39487') in 0.067049 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000274 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/hinhtruxanh.png
+  artifactKey: Guid(1c62052b3a7f739499028b3a749800eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/hinhtruxanh.png using Guid(1c62052b3a7f739499028b3a749800eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '787a79718c76244962109b04168e7610') in 0.062193 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Game/Art/mini4_trang trí hoa quả/coc mieng.png
+  artifactKey: Guid(0253c00b279f0bf4f87cf71f9b4756b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini4_trang trí hoa quả/coc mieng.png using Guid(0253c00b279f0bf4f87cf71f9b4756b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '825f87fa39c1f2454c12596aa4d1f51a') in 0.062328 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/truvuong vang.png
+  artifactKey: Guid(52f29aa7537d12548ae412247c750320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/truvuong vang.png using Guid(52f29aa7537d12548ae412247c750320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfe2e52f74baec2efcfe594119f97ec4') in 0.066824 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/Papers/vang.png
+  artifactKey: Guid(f272cd62449010846be0b5be2028318a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/Papers/vang.png using Guid(f272cd62449010846be0b5be2028318a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30f76a28fccf5da20787a9a7138b3e27') in 0.063290 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/Game/Art/mini4_trang trí hoa quả/Fruits/tao.png
+  artifactKey: Guid(3e524ecdc0fff244c8650d643e8ffe41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini4_trang trí hoa quả/Fruits/tao.png using Guid(3e524ecdc0fff244c8650d643e8ffe41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb6ee1b1d91f8ec092df0f80aeb22846') in 0.047417 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Game/Art/mini 3_ Phép toán/cong.png
+  artifactKey: Guid(ee1e5c0d7d239e8449c974a402e45865) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 3_ Phép toán/cong.png using Guid(ee1e5c0d7d239e8449c974a402e45865) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '939f1479ebcc1c991a4d070a51b1b801') in 0.035226 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/Papers/xanh duong.png
+  artifactKey: Guid(0cbe7d2887be5ee40a03f5d269e4ed65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/Papers/xanh duong.png using Guid(0cbe7d2887be5ee40a03f5d269e4ed65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ad8abd76199aa9e44f8d6c9483cb5bb') in 0.083140 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Game/Art/mini4_trang trí hoa quả/coc tay.png
+  artifactKey: Guid(f495baa2a1584124eb893d97817c6d76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini4_trang trí hoa quả/coc tay.png using Guid(f495baa2a1584124eb893d97817c6d76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd31eb047530359a867e06f94619598e4') in 0.034350 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/hop do.png
+  artifactKey: Guid(eec12598316346d4d8d15f857bb6a612) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/hop do.png using Guid(eec12598316346d4d8d15f857bb6a612) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46884b3349f5fd81eccf1470299b1a56') in 0.068777 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/truvuongngxanh duong.png
+  artifactKey: Guid(aa6034c5087e8c3448edb9a12a6c3a30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/truvuongngxanh duong.png using Guid(aa6034c5087e8c3448edb9a12a6c3a30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3d8767d0f5a5fe5dd1d30b293562313') in 0.097033 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/truvuong cam.png
+  artifactKey: Guid(8b85e0d72d6fe654aa7f77be21397ab1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/truvuong cam.png using Guid(8b85e0d72d6fe654aa7f77be21397ab1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8f20a72885614c4ae6214fc743613af') in 0.077041 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/truxanh.png
+  artifactKey: Guid(d84b8b44ae260cd4bb5ec0a76d6e4b72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/truxanh.png using Guid(d84b8b44ae260cd4bb5ec0a76d6e4b72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57560fe680b7b841c288d95674ade782') in 0.076297 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/hinhtrucam.png
+  artifactKey: Guid(5241d5f8b4d8dcd42a52f1aed90cc1e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/hinhtrucam.png using Guid(5241d5f8b4d8dcd42a52f1aed90cc1e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1c76fe8f38e60e1ce148b42133a7dbd') in 0.057621 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/netdut.png
+  artifactKey: Guid(1468c0d64ac0cb8449c5ab2ac5fb3e1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/netdut.png using Guid(1468c0d64ac0cb8449c5ab2ac5fb3e1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba9bdd3f4f03e62a83342f233c0b6190') in 0.071566 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Game/Art/mini6_ cào chữ/brush (1).png
+  artifactKey: Guid(340ca5b6c1501204e971d2c8eb54c638) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini6_ cào chữ/brush (1).png using Guid(340ca5b6c1501204e971d2c8eb54c638) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c48e308a3d81d3352e5ffaaadd35b431') in 0.089491 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Game/Art/mini6_ cào chữ/cat.png
+  artifactKey: Guid(40a3e82809e04eb4c8f5f51a19ac8c55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini6_ cào chữ/cat.png using Guid(40a3e82809e04eb4c8f5f51a19ac8c55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d7db967e7efca061d3a75f9ca466e9a') in 0.037880 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Game/Art/mini 3_ Phép toán/so.png
+  artifactKey: Guid(bcb73ee17da5a31489d5dbc98cf05634) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 3_ Phép toán/so.png using Guid(bcb73ee17da5a31489d5dbc98cf05634) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '790014e29eb1fe4f91dba8b664d90cd2') in 0.027030 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/Game/Art/mini4_trang trí hoa quả/back trang tri.png
+  artifactKey: Guid(8bb0b768a6589ad47982b349f5ac28a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini4_trang trí hoa quả/back trang tri.png using Guid(8bb0b768a6589ad47982b349f5ac28a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3f99e5d41646be024ed5745718d2f03') in 0.054168 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/Game/Art/mini4_trang trí hoa quả/Layer 14.png
+  artifactKey: Guid(c8144c827f9c5af49a639b08ae645a3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini4_trang trí hoa quả/Layer 14.png using Guid(c8144c827f9c5af49a639b08ae645a3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8fd6d38378a0a38105c7ad5d6e2c903') in 0.066353 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Game/Art/mini4_trang trí hoa quả/mat 2.png
+  artifactKey: Guid(58688e1116d84db428c7bdb20f033488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini4_trang trí hoa quả/mat 2.png using Guid(58688e1116d84db428c7bdb20f033488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1483999a95101efa060f8b3b167f6ceb') in 0.080239 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/hop xanh duong.png
+  artifactKey: Guid(2637ad12f82fdec41a5a796266bc4464) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/hop xanh duong.png using Guid(2637ad12f82fdec41a5a796266bc4464) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23d98bace025aab365e91f2ae1787710') in 0.066312 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Game/Art/mini 3_ Phép toán/nhan.png
+  artifactKey: Guid(46497fdc6f74ec641a0eff7f22006172) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 3_ Phép toán/nhan.png using Guid(46497fdc6f74ec641a0eff7f22006172) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56e598762d67beee42b9ca13e43ac631') in 0.022974 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/trucam.png
+  artifactKey: Guid(930000893f5a7ef46b38c388f1553261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/trucam.png using Guid(930000893f5a7ef46b38c388f1553261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c640b2367398f12c6636eba96a404b94') in 0.067666 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/trudo.png
+  artifactKey: Guid(5bf78d5b55d91694fbcf44279066c30d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/trudo.png using Guid(5bf78d5b55d91694fbcf44279066c30d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61262739d57d9bc6bcd2c65e31946a6e') in 0.077575 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Game/Art/mini4_trang trí hoa quả/mat 3.png
+  artifactKey: Guid(2a0e52007caf63c47b2c3126c8f11086) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini4_trang trí hoa quả/mat 3.png using Guid(2a0e52007caf63c47b2c3126c8f11086) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f61ff7897b00fe0922c786fc75d07624') in 0.065818 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000906 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/hinhtrudo.png
+  artifactKey: Guid(f803411b53bb90241bda33f1151f4acd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/hinhtrudo.png using Guid(f803411b53bb90241bda33f1151f4acd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08348a1881f4a8124a45c75d11c80a12') in 0.098691 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Game/Art/mini 3_ Phép toán/v.png
+  artifactKey: Guid(843a81e7f9402394b97f3bb876577016) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 3_ Phép toán/v.png using Guid(843a81e7f9402394b97f3bb876577016) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79156922176c3ea845e6ef9b17fbde4a') in 0.282072 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/hop xanh.png
+  artifactKey: Guid(dc17d4db8ea33864994b4cc989e52624) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/hop xanh.png using Guid(dc17d4db8ea33864994b4cc989e52624) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9180beebcce49b6529622ac8f1ea8d4b') in 0.074548 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000163 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/Papers/cam.png
+  artifactKey: Guid(dcf631e559e88fb40b92faa9df8d45f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/Papers/cam.png using Guid(dcf631e559e88fb40b92faa9df8d45f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '825496042c37a1b57e5d95e30c5e9346') in 0.048068 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/hop cam.png
+  artifactKey: Guid(e2f656cc6407fa84ea0cdb0074aa1e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/hop cam.png using Guid(e2f656cc6407fa84ea0cdb0074aa1e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2d06b96049c4588a622e243d9fca57c') in 0.077520 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/Game/Art/mini 3_ Phép toán/chia.png
+  artifactKey: Guid(e88f271bcdbe46a4c87c0b83d2dfba5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 3_ Phép toán/chia.png using Guid(e88f271bcdbe46a4c87c0b83d2dfba5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5d876e6abfc1895be09bb6a6de6b610') in 0.042422 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Game/Art/mini6_ cào chữ/bong.png
+  artifactKey: Guid(2ccd5d1df30c2be44887ec98792331d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini6_ cào chữ/bong.png using Guid(2ccd5d1df30c2be44887ec98792331d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c51d70c3366c0e4c41204aff91a3488') in 0.067656 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/truvuongxanh.png
+  artifactKey: Guid(f93b4374eb498184d85863cb75ca408c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình vuông/truvuongxanh.png using Guid(f93b4374eb498184d85863cb75ca408c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bfc8ced7cd9c35fdba5f54aa63d1138') in 0.074459 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/Game/Art/mini 3_ Phép toán/khung.png
+  artifactKey: Guid(b911864adc02ca44698106302b07b71d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 3_ Phép toán/khung.png using Guid(b911864adc02ca44698106302b07b71d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9218c2fe68e156fa35f9e72e39c56cea') in 0.037223 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/netdut.png
+  artifactKey: Guid(a1267c5348f857540b7576a2e9d17a8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/netdut.png using Guid(a1267c5348f857540b7576a2e9d17a8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20f96c9855f2dadd2860a0daa5929fc7') in 0.069128 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Game/Art/mini4_trang trí hoa quả/Layer 8.png
+  artifactKey: Guid(062abf5dbf3304b41bd6c33f49ceed7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini4_trang trí hoa quả/Layer 8.png using Guid(062abf5dbf3304b41bd6c33f49ceed7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e796f565161063ce851954f27d568ab1') in 0.037630 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Game/Art/mini4_trang trí hoa quả/Fruits/day tay.png
+  artifactKey: Guid(c13dd14b8f3ff3e48a1fadcd530e7dd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini4_trang trí hoa quả/Fruits/day tay.png using Guid(c13dd14b8f3ff3e48a1fadcd530e7dd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42e890909bf7227401134ab39891b718') in 0.061897 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/Game/Art/mini4_trang trí hoa quả/khay.png
+  artifactKey: Guid(0a49c6224c5963045925aa29e6c82399) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini4_trang trí hoa quả/khay.png using Guid(0a49c6224c5963045925aa29e6c82399) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'faa1a2510e242228d0aafd52b45cadb8') in 0.043526 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/hinhtruxanh duong.png
+  artifactKey: Guid(e15bf6d8baa6c4346bfdb69db73b1b13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Art/mini 2 _ cat giay thu cong/hình trụ/hinhtruxanh duong.png using Guid(e15bf6d8baa6c4346bfdb69db73b1b13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9b4b8faf3c35cef3c05f49b1e1705aa') in 0.099952 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.011479 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.47 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.177 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1177ms)
+		BeginReloadAssembly (118ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (44ms)
+		EndReloadAssembly (1005ms)
+			LoadAssemblies (100ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (318ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (42ms)
+			SetupLoadedEditorAssemblies (456ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (78ms)
+				ProcessInitializeOnLoadAttributes (300ms)
+				ProcessInitializeOnLoadMethodAttributes (70ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (3ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Shader 'TextMeshPro/Distance Field (UIHsvModifier)': fallback shader 'TextMeshPro/Mobile/Distance Field (UIHsv)' not found
+Shader 'TextMeshPro/Distance Field (UIHsvModifier)': fallback shader 'TextMeshPro/Mobile/Distance Field (UIHsv)' not found
+Refreshing native plugins compatible for Editor in 1.51 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3460 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 219.0 MB.
+System memory in use after: 217.3 MB.
+
+Unloading 254 unused Assets to reduce memory usage. Loaded Objects now: 3930.
+Total: 7.446700 ms (FindLiveObjects: 0.259900 ms CreateObjectMapping: 0.144500 ms MarkObjects: 5.989000 ms  DeleteObjects: 1.051900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Shader 'TextMeshPro/Distance Field (UIHsvModifier)': fallback shader 'TextMeshPro/Mobile/Distance Field (UIHsv)' not found
+Shader 'TextMeshPro/Distance Field (UIHsvModifier)': fallback shader 'TextMeshPro/Mobile/Distance Field (UIHsv)' not found
+Refreshing native plugins compatible for Editor in 20.06 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 163 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 152.9 MB.
+System memory in use after: 151.2 MB.
+
+Unloading 163 unused Assets to reduce memory usage. Loaded Objects now: 3930.
+Total: 7.638700 ms (FindLiveObjects: 0.259800 ms CreateObjectMapping: 0.168700 ms MarkObjects: 6.064500 ms  DeleteObjects: 1.144700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Shader 'TextMeshPro/Distance Field (UIHsvModifier)': fallback shader 'TextMeshPro/Mobile/Distance Field (UIHsv)' not found
+Shader 'TextMeshPro/Distance Field (UIHsvModifier)': fallback shader 'TextMeshPro/Mobile/Distance Field (UIHsv)' not found
+Refreshing native plugins compatible for Editor in 18.38 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 163 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 152.9 MB.
+System memory in use after: 151.2 MB.
+
+Unloading 163 unused Assets to reduce memory usage. Loaded Objects now: 3930.
+Total: 9.023000 ms (FindLiveObjects: 0.291800 ms CreateObjectMapping: 0.171000 ms MarkObjects: 7.331300 ms  DeleteObjects: 1.226900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Shader 'TextMeshPro/Distance Field (UIHsvModifier)': fallback shader 'TextMeshPro/Mobile/Distance Field (UIHsv)' not found
+Shader 'TextMeshPro/Distance Field (UIHsvModifier)': fallback shader 'TextMeshPro/Mobile/Distance Field (UIHsv)' not found
+Refreshing native plugins compatible for Editor in 19.09 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 163 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 152.9 MB.
+System memory in use after: 151.2 MB.
+
+Unloading 163 unused Assets to reduce memory usage. Loaded Objects now: 3930.
+Total: 8.085700 ms (FindLiveObjects: 0.284200 ms CreateObjectMapping: 0.163200 ms MarkObjects: 6.461000 ms  DeleteObjects: 1.176100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

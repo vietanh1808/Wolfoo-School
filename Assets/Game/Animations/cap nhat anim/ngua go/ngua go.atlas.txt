@@ -1,0 +1,20 @@
+
+ngua go.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bong
+  rotate: true
+  xy: 856, 260
+  size: 640, 186
+  orig: 640, 186
+  offset: 0, 0
+  index: -1
+ngua
+  rotate: true
+  xy: 0, 0
+  size: 900, 854
+  orig: 900, 854
+  offset: 0, 0
+  index: -1

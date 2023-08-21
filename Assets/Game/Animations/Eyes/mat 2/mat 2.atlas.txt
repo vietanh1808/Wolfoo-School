@@ -1,0 +1,41 @@
+
+mat 2.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+long may
+  rotate: false
+  xy: 1346, 232
+  size: 466, 61
+  orig: 468, 63
+  offset: 1, 1
+  index: -1
+mat1
+  rotate: false
+  xy: 0, 0
+  size: 681, 293
+  orig: 683, 295
+  offset: 1, 1
+  index: -1
+trong 1
+  rotate: false
+  xy: 683, 26
+  size: 661, 267
+  orig: 663, 269
+  offset: 1, 1
+  index: -1
+xoay
+  rotate: true
+  xy: 1814, 47
+  size: 246, 216
+  orig: 248, 218
+  offset: 1, 1
+  index: -1
+xoay 1
+  rotate: false
+  xy: 1346, 14
+  size: 246, 216
+  orig: 248, 218
+  offset: 1, 1
+  index: -1

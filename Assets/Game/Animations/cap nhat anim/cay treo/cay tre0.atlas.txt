@@ -1,0 +1,97 @@
+
+cay tre0.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 190
+  rotate: true
+  xy: 0, 259
+  size: 747, 804
+  orig: 747, 804
+  offset: 0, 0
+  index: -1
+Layer 203
+  rotate: false
+  xy: 806, 375
+  size: 705, 631
+  orig: 705, 631
+  offset: 0, 0
+  index: -1
+bui 1
+  rotate: false
+  xy: 0, 98
+  size: 290, 159
+  orig: 290, 159
+  offset: 0, 0
+  index: -1
+bui 2
+  rotate: true
+  xy: 1796, 751
+  size: 255, 204
+  orig: 255, 204
+  offset: 0, 0
+  index: -1
+bui 3
+  rotate: false
+  xy: 1084, 130
+  size: 366, 243
+  orig: 366, 243
+  offset: 0, 0
+  index: -1
+canh 1
+  rotate: false
+  xy: 1769, 242
+  size: 238, 480
+  orig: 238, 480
+  offset: 0, 0
+  index: -1
+canh 2
+  rotate: true
+  xy: 1513, 724
+  size: 282, 281
+  orig: 282, 281
+  offset: 0, 0
+  index: -1
+canh 3
+  rotate: true
+  xy: 1452, 0
+  size: 205, 315
+  orig: 205, 315
+  offset: 0, 0
+  index: -1
+chau 1
+  rotate: true
+  xy: 806, 107
+  size: 266, 276
+  orig: 266, 276
+  offset: 0, 0
+  index: -1
+day treo
+  rotate: false
+  xy: 1513, 207
+  size: 254, 515
+  orig: 254, 515
+  offset: 0, 0
+  index: -1
+hoa 1
+  rotate: true
+  xy: 1857, 172
+  size: 68, 62
+  orig: 68, 62
+  offset: 0, 0
+  index: -1
+hoa 2
+  rotate: false
+  xy: 1769, 161
+  size: 86, 79
+  orig: 86, 79
+  offset: 0, 0
+  index: -1
+hoa 3
+  rotate: false
+  xy: 1857, 108
+  size: 68, 62
+  orig: 68, 62
+  offset: 0, 0
+  index: -1

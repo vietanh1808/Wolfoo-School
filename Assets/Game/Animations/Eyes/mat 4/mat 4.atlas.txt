@@ -1,0 +1,62 @@
+
+mat 4.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: true
+  xy: 460, 43
+  size: 149, 64
+  orig: 151, 66
+  offset: 1, 1
+  index: -1
+11
+  rotate: false
+  xy: 295, 194
+  size: 278, 262
+  orig: 280, 264
+  offset: 1, 1
+  index: -1
+2
+  rotate: true
+  xy: 165, 13
+  size: 149, 64
+  orig: 151, 66
+  offset: 1, 1
+  index: -1
+22
+  rotate: false
+  xy: 575, 189
+  size: 261, 267
+  orig: 263, 269
+  offset: 1, 1
+  index: -1
+mat 1
+  rotate: true
+  xy: 295, 30
+  size: 162, 163
+  orig: 166, 165
+  offset: 2, 1
+  index: -1
+mat 2
+  rotate: true
+  xy: 0, 0
+  size: 162, 163
+  orig: 166, 165
+  offset: 2, 1
+  index: -1
+trong 1
+  rotate: false
+  xy: 0, 164
+  size: 293, 292
+  orig: 295, 294
+  offset: 1, 1
+  index: -1
+trong 2
+  rotate: false
+  xy: 0, 164
+  size: 293, 292
+  orig: 295, 294
+  offset: 1, 1
+  index: -1

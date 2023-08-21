@@ -1,0 +1,48 @@
+
+bong bay.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bong vang
+  rotate: true
+  xy: 0, 17
+  size: 555, 689
+  orig: 555, 689
+  offset: 0, 0
+  index: -1
+cam
+  rotate: false
+  xy: 691, 0
+  size: 553, 687
+  orig: 553, 687
+  offset: 0, 0
+  index: -1
+day
+  rotate: true
+  xy: 643, 689
+  size: 25, 534
+  orig: 25, 534
+  offset: 0, 0
+  index: -1
+de
+  rotate: false
+  xy: 555, 669
+  size: 86, 45
+  orig: 86, 45
+  offset: 0, 0
+  index: -1
+duong
+  rotate: false
+  xy: 0, 574
+  size: 553, 695
+  orig: 553, 695
+  offset: 0, 0
+  index: -1
+xanh
+  rotate: true
+  xy: 555, 716
+  size: 553, 693
+  orig: 553, 693
+  offset: 0, 0
+  index: -1

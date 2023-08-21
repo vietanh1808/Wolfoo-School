@@ -1,0 +1,41 @@
+
+quat.png
+size: 4096,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+can gat
+  rotate: false
+  xy: 3147, 718
+  size: 302, 277
+  orig: 302, 277
+  offset: 0, 0
+  index: -1
+fx
+  rotate: false
+  xy: 0, 0
+  size: 985, 995
+  orig: 985, 995
+  offset: 0, 0
+  index: -1
+quay 1
+  rotate: true
+  xy: 987, 126
+  size: 869, 781
+  orig: 869, 781
+  offset: 0, 0
+  index: -1
+quay 2
+  rotate: true
+  xy: 1770, 126
+  size: 869, 781
+  orig: 869, 781
+  offset: 0, 0
+  index: -1
+than quat
+  rotate: false
+  xy: 2553, 64
+  size: 592, 931
+  orig: 592, 931
+  offset: 0, 0
+  index: -1

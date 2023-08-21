@@ -1,0 +1,69 @@
+
+open door.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+canh cua
+  rotate: false
+  xy: 1965, 833
+  size: 420, 1189
+  orig: 420, 1189
+  offset: 0, 0
+  index: -1
+canh cua nguoc
+  rotate: false
+  xy: 2387, 833
+  size: 420, 1189
+  orig: 420, 1189
+  offset: 0, 0
+  index: -1
+cua mo
+  rotate: false
+  xy: 1328, 297
+  size: 635, 1725
+  orig: 877, 1774
+  offset: 95, 11
+  index: -1
+kinh
+  rotate: true
+  xy: 1965, 398
+  size: 433, 1171
+  orig: 433, 1171
+  offset: 0, 0
+  index: -1
+nam 1
+  rotate: true
+  xy: 1328, 133
+  size: 162, 155
+  orig: 165, 157
+  offset: 2, 1
+  index: -1
+nam cua
+  rotate: true
+  xy: 1485, 139
+  size: 156, 155
+  orig: 159, 157
+  offset: 2, 1
+  index: -1
+sau cua
+  rotate: false
+  xy: 0, 119
+  size: 686, 1903
+  orig: 686, 1903
+  offset: 0, 0
+  index: -1
+sau cua nguoc
+  rotate: true
+  xy: 0, 0
+  size: 117, 1525
+  orig: 686, 1903
+  offset: 569, 2
+  index: -1
+trc cua 1
+  rotate: false
+  xy: 688, 122
+  size: 638, 1900
+  orig: 638, 1900
+  offset: 0, 0
+  index: -1

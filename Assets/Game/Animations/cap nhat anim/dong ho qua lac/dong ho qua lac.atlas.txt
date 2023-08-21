@@ -1,0 +1,62 @@
+
+dong ho qua lac.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 111
+  rotate: false
+  xy: 862, 57
+  size: 616, 376
+  orig: 616, 376
+  offset: 0, 0
+  index: -1
+Layer 116
+  rotate: true
+  xy: 1542, 454
+  size: 427, 416
+  orig: 427, 416
+  offset: 0, 0
+  index: -1
+Layer 119
+  rotate: true
+  xy: 0, 337
+  size: 544, 860
+  orig: 544, 860
+  offset: 0, 0
+  index: -1
+Layer 120
+  rotate: true
+  xy: 1542, 0
+  size: 452, 326
+  orig: 452, 326
+  offset: 0, 0
+  index: -1
+Layer 122
+  rotate: true
+  xy: 862, 435
+  size: 446, 678
+  orig: 446, 678
+  offset: 0, 0
+  index: -1
+Layer 123
+  rotate: false
+  xy: 1870, 352
+  size: 86, 100
+  orig: 86, 100
+  offset: 0, 0
+  index: -1
+Layer 124
+  rotate: true
+  xy: 1870, 266
+  size: 84, 61
+  orig: 84, 61
+  offset: 0, 0
+  index: -1
+qua lac
+  rotate: true
+  xy: 0, 130
+  size: 205, 358
+  orig: 205, 358
+  offset: 0, 0
+  index: -1

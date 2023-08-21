@@ -1,0 +1,38 @@
+1.0.6
+- [Fix] Shapes Manager instance(s) bug
+- [Fix] Shape's scale in the Albums(s) scene(s)
+- [Fix] Escape event bug
+- [Improve] Shapes Manager
+- [Improve] Ads Manager
+- [New] Picture option for the shape
+- [New] Sentence Scene
+- [New] Music mute option
+
+1.0.5
+- [Fix] Animation of b,d,u letters
+- [Fix] Boundary of c letter
+
+1.0.4
+- [New] AdsManager
+- [New] Admob Integration
+- [New] ChartBoost Integration
+- [New] Unity Ads Integration
+- [New] Manual Update
+
+1.0.3
+- [New] Ability to create compound shape of multiple letters or numbers
+- [Improve] Album scene performance 
+- [Improve] Game Manager script
+
+1.0.2
+- [New] Include UI/DefaultETC1 shader
+- [Fix] Missed references for Letters & Tracing Hand 
+- [Fix] Direction of letters 
+
+1.0.1
+- [New] Unity 5.5 upgrade
+- [Fix] Missed Group tag bug
+- [Fix] Missed A-Z Uppercase prefabs
+
+1.0.0
+- First release

@@ -1,0 +1,237 @@
+
+skeleton.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 1
+  rotate: false
+  xy: 3000, 0
+  size: 505, 414
+  orig: 505, 414
+  offset: 0, 0
+  index: -1
+Layer 2
+  rotate: false
+  xy: 156, 1581
+  size: 192, 157
+  orig: 192, 157
+  offset: 0, 0
+  index: -1
+Layer 3
+  rotate: false
+  xy: 0, 1706
+  size: 154, 32
+  orig: 154, 32
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00003
+  rotate: true
+  xy: 608, 1328
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00004
+  rotate: true
+  xy: 1108, 1328
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00005
+  rotate: true
+  xy: 1608, 1328
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00006
+  rotate: true
+  xy: 2108, 1328
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00007
+  rotate: true
+  xy: 2608, 1328
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00008
+  rotate: true
+  xy: 3108, 1328
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00009
+  rotate: false
+  xy: 3608, 1240
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00010
+  rotate: true
+  xy: 0, 1070
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00011
+  rotate: true
+  xy: 500, 916
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00012
+  rotate: true
+  xy: 1000, 916
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00013
+  rotate: true
+  xy: 1500, 916
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00014
+  rotate: true
+  xy: 2000, 916
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00015
+  rotate: true
+  xy: 2500, 916
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00016
+  rotate: true
+  xy: 3000, 916
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00017
+  rotate: true
+  xy: 3500, 828
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00018
+  rotate: true
+  xy: 0, 658
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00019
+  rotate: true
+  xy: 500, 504
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00020
+  rotate: true
+  xy: 1000, 504
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00021
+  rotate: true
+  xy: 1500, 504
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00022
+  rotate: true
+  xy: 2000, 504
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00023
+  rotate: true
+  xy: 2500, 504
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00024
+  rotate: true
+  xy: 3000, 504
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00025
+  rotate: true
+  xy: 3500, 416
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00026
+  rotate: true
+  xy: 0, 246
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00027
+  rotate: true
+  xy: 500, 92
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00028
+  rotate: true
+  xy: 1000, 92
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00029
+  rotate: true
+  xy: 1500, 92
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00030
+  rotate: true
+  xy: 2000, 92
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+Nuoc/Binh Tuoi Nuoc/Nuoc_00031
+  rotate: true
+  xy: 2500, 92
+  size: 410, 498
+  orig: 410, 498
+  offset: 0, 0
+  index: -1
+giot nuoc
+  rotate: false
+  xy: 350, 1482
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1

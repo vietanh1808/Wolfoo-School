@@ -1,0 +1,55 @@
+
+Hoa huong duong 2.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Hat huong duong
+  rotate: false
+  xy: 1305, 75
+  size: 200, 407
+  orig: 200, 407
+  offset: 0, 0
+  index: -1
+Hoa huong duong
+  rotate: false
+  xy: 0, 10
+  size: 467, 472
+  orig: 467, 472
+  offset: 0, 0
+  index: -1
+Nhanh 3 1
+  rotate: true
+  xy: 758, 120
+  size: 362, 208
+  orig: 362, 208
+  offset: 0, 0
+  index: -1
+Nhanh 3 2
+  rotate: true
+  xy: 469, 114
+  size: 368, 287
+  orig: 368, 287
+  offset: 0, 0
+  index: -1
+Nhanh 3 3
+  rotate: false
+  xy: 968, 128
+  size: 296, 166
+  orig: 296, 166
+  offset: 0, 0
+  index: -1
+Nhanh 3 4
+  rotate: false
+  xy: 968, 296
+  size: 296, 186
+  orig: 296, 186
+  offset: 0, 0
+  index: -1
+Than 3
+  rotate: true
+  xy: 469, 0
+  size: 112, 834
+  orig: 112, 834
+  offset: 0, 0
+  index: -1
