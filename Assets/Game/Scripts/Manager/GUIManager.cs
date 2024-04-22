@@ -294,35 +294,16 @@ public class GUIManager : MonoBehaviour
         TutorialManager.Instance.Stop();
         SoundManager.instance.PlayOtherSfx(SfxOtherType.Click);
 
-        if (AdsManager.Instance.HasInters)
+        FirebaseManager.instance.LogWatchAds("Inters");
+        if (isDestroy)
         {
-            AdsManager.Instance.ShowInterstitial(() =>
-            {
-                FirebaseManager.instance.LogWatchAds("Inters");
-                if (isDestroy)
-                {
-                    Destroy(_panel.gameObject);
-                }
-                else
-                {
-                    _panel.Hide();
-                }
-                OpenPanel(panelType);
-            });
+            Destroy(_panel.gameObject);
         }
         else
         {
-            if (isDestroy)
-            {
-                Destroy(_panel.gameObject);
-            }
-            else
-            {
-                _panel.Hide();
-            }
-            OpenPanel(panelType);
+            _panel.Hide();
         }
-
+        OpenPanel(panelType);
     }
 
     void OnEndgame(System.Action OnComplete = null)
@@ -367,20 +348,9 @@ public class GUIManager : MonoBehaviour
         FirebaseManager.instance.LogEndMode(_gameobject.name);
         OnEndgame(() =>
         {
-            if (AdsManager.Instance.HasInters)
-            {
-                AdsManager.Instance.ShowInterstitial(() =>
-                {
-                    FirebaseManager.instance.LogWatchAds("Inters");
-                    OpenPanel(panelType);
-                    Destroy(_gameobject);
-                });
-            }
-            else
-            {
-                OpenPanel(panelType);
-                Destroy(_gameobject);
-            }
+            FirebaseManager.instance.LogWatchAds("Inters");
+            OpenPanel(panelType);
+            Destroy(_gameobject);
         });
     }
 

@@ -36,7 +36,6 @@ public class HomePanel : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     private void OnEnable()
     {
         isSpawned = false;
-        AdsManager.Instance.ShowBanner();
         teacherCharacter.PlayWaveHand();
         EventManager.OnWatchAds += GetWatchAds;
     }
@@ -123,18 +122,7 @@ public class HomePanel : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     void OnBack()
     {
         gameObject.SetActive(false);
-        if (AdsManager.Instance.HasInters)
-        {
-            AdsManager.Instance.ShowInterstitial(() =>
-            {
-                FirebaseManager.instance.LogWatchAds("Inters");
-                GUIManager.instance.OpenPanel(PanelType.Intro);
-            });
-        }
-        else
-        {
             GUIManager.instance.OpenPanel(PanelType.Intro);
-        }
     }
     void OnSetting()
     {
@@ -145,7 +133,6 @@ public class HomePanel : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     {
         if (isSpawned) return;
         isSpawned = true;
-        AdsManager.Instance.HideBanner();
         SoundManager.instance.PlayOtherSfx(SfxOtherType.Click);
         GUIManager.instance.PlayLoading(() =>
         {

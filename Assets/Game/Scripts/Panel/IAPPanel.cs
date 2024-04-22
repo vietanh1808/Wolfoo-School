@@ -48,7 +48,6 @@ public class IAPPanel : Panel
     private void OnBuyClick()
     {
         DataMainManager.instance.LocalDataStorage.isRemoveAds = true;
-        AdsManager.Instance.SetRemovedAds();
         buyBtn.interactable = false;
         buyBtn.transform.DOPunchScale(Vector3.one * .1f, 0.5f, 5);
     }

@@ -228,7 +228,7 @@ namespace SCN.Tutorial
 
 		bool CheckUserClick()
 		{
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_WEBGL
 			return Input.GetMouseButtonDown(0);
 #else
 			if (Input.touchCount > 0)

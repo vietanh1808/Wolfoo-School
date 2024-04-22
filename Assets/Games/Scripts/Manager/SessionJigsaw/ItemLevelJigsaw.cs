@@ -24,29 +24,11 @@ public class ItemLevelJigsaw : MonoBehaviour
     }
     private void OnButtonClick()
     {
-        if (isLockAds)
+        EventDispatcher.Instance.Dispatch(new EventKey.PlayLevelJigsaw
         {
-            if (AdsManager.Instance.HasRewardVideo)
-            {
-                AdsManager.Instance.ShowRewardVideo(() =>
-                {
-                    //PlayerData.ChangeData(Config.JIGSAW, jigsawType==SessionJigsaw.JigsawType.Alphabet? Config.JIGSAW_ALPHABET:
-                    //Config.JIGSAW_PICTURE, index);
-                    //isLockAds = false;
-                    //lockAds.SetActive(isLockAds);
-                    EventDispatcher.Instance.Dispatch(new EventKey.PlayLevelJigsaw
-                    {
-                        index = index,
-                        jigsawType = jigsawType
-                    });
-                    //FirebaseManager.Instance.WatchReward("jigsaw_" + jigsawType + "_" + index);
-                });
-            }
-        }
-        else
-        {
-            EventDispatcher.Instance.Dispatch(new EventKey.PlayLevelJigsaw { index = index, jigsawType = jigsawType });
-        }
+            index = index,
+            jigsawType = jigsawType
+        });
     }
     public void SetLockAds(bool isLockAds_)
     {

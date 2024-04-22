@@ -66,7 +66,7 @@ public class DataMainManager : MonoBehaviour
         var length = GameManager.instance.ClayDataSO.potSprites.Length;
         for (int i = 0; i < length; i++)
         {
-            LocalDataStorage.unlockFlowerPots.Add(i < 2);
+            LocalDataStorage.unlockFlowerPots.Add(true);
         }
 
         LocalDataStorage.unlockAlphas = new List<bool>();
@@ -74,7 +74,7 @@ public class DataMainManager : MonoBehaviour
         var length2 = GameManager.instance.AlphaLearningDataSO.uppercaseSprites.Count;
         for (int i = 0; i < length2; i++)
         {
-            LocalDataStorage.unlockAlphas.Add(i < 5);
+            LocalDataStorage.unlockAlphas.Add(true);
         }
 
         SaveItem(StorageKey.Data);
@@ -89,7 +89,7 @@ public class DataMainManager : MonoBehaviour
     {
         for (int i = 0; i < LocalDataStorage.unlockShapesBoard.Count; i++)
         {
-            LocalDataStorage.unlockShapesBoard [i] = false;
+            LocalDataStorage.unlockShapesBoard [i] = true;
         }
         SaveItem(StorageKey.Data);
     }
@@ -142,7 +142,7 @@ public class DataMainManager : MonoBehaviour
                 LocalDataStorage.unlockShapeTopics.Add(true);
                 continue;
             }
-            LocalDataStorage.unlockShapeTopics.Add(false);
+            LocalDataStorage.unlockShapeTopics.Add(true);
         }
     }
 
@@ -150,7 +150,7 @@ public class DataMainManager : MonoBehaviour
     {
         for (int i = 0; i < LocalDataStorage.unlockShapesBoard.Count; i++)
         {
-            LocalDataStorage.unlockShapesBoard[i] = false;
+            LocalDataStorage.unlockShapesBoard[i] = true;
         }
         SaveItem(StorageKey.Data);
     }
@@ -158,7 +158,7 @@ public class DataMainManager : MonoBehaviour
     {
         for (int i = 0; i < LocalDataStorage.shapeGlocerys.Count; i++)
         {
-            LocalDataStorage.shapeGlocerys[i].unlockShapes = false;
+            LocalDataStorage.shapeGlocerys[i].unlockShapes = true;
         }
         SaveItem(StorageKey.Data);
     }
@@ -174,7 +174,7 @@ public class DataMainManager : MonoBehaviour
                 LocalDataStorage.unlockFruitDecorTopics.Add(true);
                 continue;
             }
-            LocalDataStorage.unlockFruitDecorTopics.Add(false);
+            LocalDataStorage.unlockFruitDecorTopics.Add(true);
         }
     }
 
@@ -190,7 +190,7 @@ public class DataMainManager : MonoBehaviour
                 LocalDataStorage.unlockFloorSkins.Add(true);
                 continue;
             }
-            LocalDataStorage.unlockFloorSkins.Add(false);
+            LocalDataStorage.unlockFloorSkins.Add(true);
         }
     }
     private void InitCarpet()
@@ -205,7 +205,7 @@ public class DataMainManager : MonoBehaviour
                 LocalDataStorage.unlockCarpetSkins.Add(true);
                 continue;
             }
-            LocalDataStorage.unlockCarpetSkins.Add(false);
+            LocalDataStorage.unlockCarpetSkins.Add(true);
         }
     }
     private void InitWall()
@@ -220,7 +220,7 @@ public class DataMainManager : MonoBehaviour
                 LocalDataStorage.unlockWallSkins.Add(true);
                 continue;
             }
-            LocalDataStorage.unlockWallSkins.Add(false);
+            LocalDataStorage.unlockWallSkins.Add(true);
         }
     }
     private void InitChair()
@@ -235,7 +235,7 @@ public class DataMainManager : MonoBehaviour
                 LocalDataStorage.unlockChairSkins.Add(true);
                 continue;
             }
-            LocalDataStorage.unlockChairSkins.Add(false);
+            LocalDataStorage.unlockChairSkins.Add(true);
         }
     }
     private void InitCharacter()
@@ -250,7 +250,7 @@ public class DataMainManager : MonoBehaviour
                 LocalDataStorage.unlockCharacters.Add(true);
                 continue;
             }
-            LocalDataStorage.unlockCharacters.Add(false);
+            LocalDataStorage.unlockCharacters.Add(true);
         }
     }
     private void InitBag()
@@ -265,7 +265,7 @@ public class DataMainManager : MonoBehaviour
                 LocalDataStorage.unlockBagSkins.Add(true);
                 continue;
             }
-            LocalDataStorage.unlockBagSkins.Add(false);
+            LocalDataStorage.unlockBagSkins.Add(true);
         }
     }
 
@@ -275,7 +275,7 @@ public class DataMainManager : MonoBehaviour
         LocalDataStorage.unlockShapesBoard = new List<bool>();
         for (int i = 0; i < length; i++)
         {
-            LocalDataStorage.unlockShapesBoard.Add(false);
+            LocalDataStorage.unlockShapesBoard.Add(true);
         }
     }
     void InitShape()
@@ -285,7 +285,7 @@ public class DataMainManager : MonoBehaviour
         var length = GameManager.instance.ShapeDataSO.emptySliceSprites.Count;
         for (int i = 0; i < length; i++)
         {
-            LocalDataStorage.shapeGlocerys.Add(new ShapeStruct() { idx = Vector2.zero, unlockShapes = false });
+            LocalDataStorage.shapeGlocerys.Add(new ShapeStruct() { idx = Vector2.zero, unlockShapes = true });
         }
     }
     void InitSetting()

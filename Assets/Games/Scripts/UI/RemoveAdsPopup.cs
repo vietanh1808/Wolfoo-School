@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Purchasing;
-using Firebase.Analytics;
 using DG.Tweening;
 using SCN;
 public class RemoveAdsPopup : MonoBehaviour
@@ -19,10 +18,7 @@ public class RemoveAdsPopup : MonoBehaviour
         close.onClick.AddListener(OnClose);
         buttonBuy.onClick.AddListener(() =>
         {
-            IAPManager.Instance.BuyProductID(idRemoveAds, "Remove Ads", "2.99", "USD");
         });
-        buttonRestore.onClick.AddListener(IAPManager.Instance.RestorePurchases);
-        IAPManager.Instance.OnBuyDone.AddListener(OnRemoveAds);
         AssignSaleOff();
     }
     private void OnClose()
@@ -43,8 +39,6 @@ public class RemoveAdsPopup : MonoBehaviour
     }
     private void OnRemoveAds()
     {
-        AdsManager.Instance.SetRemovedAds();
-
         //Bắn event xử lý ở đây
         EventManager.OnBuyRemoveAds?.Invoke();
         DOVirtual.DelayedCall(0.25f, ()=> {
@@ -52,16 +46,9 @@ public class RemoveAdsPopup : MonoBehaviour
         });
         Debug.Log("Remove Ads");
         if (Application.internetReachability == NetworkReachability.NotReachable) return;
-        FirebaseAnalytics.LogEvent("RemovedAds", "RemovedAds", 1);
     }
     private void AssignSaleOff()
     {
-        Product product = IAPManager.Instance.GetProduct(idRemoveAds);
-        if (product != null)
-        {
-            costBuyTxt.text = product.metadata.localizedPriceString;
-        }
-        
 
     }
 }

@@ -74,19 +74,9 @@ public class GiftPanel : MonoBehaviour, IPointerClickHandler
             giftAnim.PlayPutItemIntoGift(curItem, () =>
             {
                 Destroy(GUIManager.instance.CurMode);
-                gameObject.SetActive(false);
-                AdsManager.Instance.ShowBanner();
-                if (AdsManager.Instance.HasInters)
-                {
-                    AdsManager.Instance.ShowInterstitial(() =>
-                    {
-                        GUIManager.instance.OpenPanel(PanelType.Home);
-                    });
-                }
-                else
-                {
-                    GUIManager.instance.OpenPanel(PanelType.Home);
-                }
+                gameObject.SetActive(false); 
+                GUIManager.instance.OpenPanel(PanelType.Home);
+
             });
         });
     }

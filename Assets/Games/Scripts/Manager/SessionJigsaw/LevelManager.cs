@@ -57,20 +57,9 @@ public class LevelManager : MonoBehaviour
     private void OnCloseLevel()
     {
         tweenDelay?.Kill();
-        if (AdsManager.Instance.HasInters)
-        {
-            AdsManager.Instance.ShowInterstitial(() =>
-            {
-                EventDispatcher.Instance.Dispatch(new EventKey.OnCloseLevelJigsaw());
-             //   FirebaseManager.Instance.WatchInter("Jigsaw");
-                gameObject.SetActive(false);
-            });
-        }
-        else
-        {
-            EventDispatcher.Instance.Dispatch(new EventKey.OnCloseLevelJigsaw());
-            gameObject.SetActive(false);
-        }
+        EventDispatcher.Instance.Dispatch(new EventKey.OnCloseLevelJigsaw());
+        //   FirebaseManager.Instance.WatchInter("Jigsaw");
+        gameObject.SetActive(false);
     }
     public void OnLevelStart(Sprite img)
     {
@@ -189,20 +178,9 @@ public class LevelManager : MonoBehaviour
         imageHint.color = Color.white;
         imageHint.GetComponent<UIShiny>().enabled = true;
         tweenDelay= DOVirtual.DelayedCall(2.5f,()=> {
-            if (AdsManager.Instance.HasInters)
-            {
-                AdsManager.Instance.ShowInterstitial(() =>
-                {
-                    EventDispatcher.Instance.Dispatch(new EventKey.OnCloseLevelJigsaw());
-                 //   FirebaseManager.Instance.WatchInter("Jigsaw");
-                    gameObject.SetActive(false);
-                });
-            }
-            else
-            {
-                EventDispatcher.Instance.Dispatch(new EventKey.OnCloseLevelJigsaw());
-                gameObject.SetActive(false);
-            }
+            EventDispatcher.Instance.Dispatch(new EventKey.OnCloseLevelJigsaw());
+            //   FirebaseManager.Instance.WatchInter("Jigsaw");
+            gameObject.SetActive(false);
         });
     }
     //private void OnHintImage(EventKey.OnHintImage data)

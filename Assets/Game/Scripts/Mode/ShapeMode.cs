@@ -61,18 +61,7 @@ public class ShapeMode : Panel
             var session = Instantiate(sessionPbs[countSession], transform);
             if (countSession == 2)
             {
-                    //OnNextModeGalaxy(session);
-                if (AdsManager.Instance.HasInters)
-                {
-                    AdsManager.Instance.ShowInterstitial(() =>
-                    {
                         OnNextModeGalaxy(session);
-                    });
-                }
-                else
-                {
-                        OnNextModeGalaxy(session);
-                }
             }
             else
             {

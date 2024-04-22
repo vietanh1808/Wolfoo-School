@@ -198,21 +198,8 @@ public class AdsPanel : Panel
     {
         base.Hide();
 
-        //EventManager.OnWatchAds?.Invoke(curIdx, priceItem);
-        //EventDispatcher.Instance.Dispatch(new EventKey.OnWatchAds { instanceID = curInstanceId, idxItem = curIdx });
-
-        if (AdsManager.Instance.HasRewardVideo)
-        {
-            AdsManager.Instance.ShowRewardVideo(() =>
-            {
-                FirebaseManager.instance.LogWatchAds("Reward");
-                EventManager.OnWatchAds?.Invoke(curIdx, priceItem);
-                EventDispatcher.Instance.Dispatch(new EventKey.OnWatchAds { instanceID = curInstanceId, idxItem = curIdx });
-            });
-        }
-        else
-        {
-            EventManager.OpenPanel?.Invoke(PanelType.NoAds);
-        }
+        FirebaseManager.instance.LogWatchAds("Reward");
+        EventManager.OnWatchAds?.Invoke(curIdx, priceItem);
+        EventDispatcher.Instance.Dispatch(new EventKey.OnWatchAds { instanceID = curInstanceId, idxItem = curIdx });
     }
 }

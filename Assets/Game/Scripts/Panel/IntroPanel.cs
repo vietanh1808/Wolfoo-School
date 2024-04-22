@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-using SCN.IAP;
 
 public class IntroPanel : Panel
 {
@@ -45,7 +44,6 @@ public class IntroPanel : Panel
     }
     private void OnEnable()
     {
-        iapBtn.gameObject.SetActive(!AdsManager.Instance.IsRemovedAds);
     }
 
     private void Start()
@@ -57,7 +55,6 @@ public class IntroPanel : Panel
         EventManager.OnBuyRemoveAds += GetBuyRemoveAds;
 
         //   iapBtn.gameObject.SetActive(!AdsManager.Instance.IsRemovedAds);
-        AdsManager.Instance.HideBanner();
 
         //transform.DOScale(Vector3.one, 1).OnComplete(() =>
         //{
@@ -105,13 +102,7 @@ public class IntroPanel : Panel
 
     private void OnOpenIapPanel()
     {
-        StartCoroutine(IAPManager.Instance.IEStart());
         SoundManager.instance.PlayOtherSfx(SfxOtherType.Click);
-        IAPPolicyDialog.Instance.OpenDialog(() =>
-        {
-            //GUIManager.instance.OpenPanel(PanelType.IAP);
-            IAPManager.Instance.OpenPanel();
-        });
     }
     void WolfooRunToSchool()
     {
