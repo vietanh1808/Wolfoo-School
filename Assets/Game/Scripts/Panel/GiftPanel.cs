@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.EventSystems;
+using SCN.Ads;
 
 public class GiftPanel : MonoBehaviour, IPointerClickHandler
 {
@@ -78,7 +79,7 @@ public class GiftPanel : MonoBehaviour, IPointerClickHandler
                 AdsManager.Instance.ShowBanner();
                 if (AdsManager.Instance.HasInters)
                 {
-                    AdsManager.Instance.ShowInterstitial(() =>
+                    AdsManager.Instance.ShowInterstitial((value) =>
                     {
                         GUIManager.instance.OpenPanel(PanelType.Home);
                     });

@@ -1,13 +1,16 @@
 ﻿using DG.Tweening;
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace SCN.Common
 {
-	[CreateAssetMenu(fileName = "Dotween manager", menuName = "Scriptable Objects/DOTween")]
+	[CreateAssetMenu(fileName = AssetName, menuName = "SCN/Scriptable Objects/DOTween")]
 	public class DOTweenManager : ScriptableObject
 	{
+		public const string AssetName = "Dotween manager";
+
 		static DOTweenManager instance;
 		public static DOTweenManager Instance
 		{
@@ -24,7 +27,7 @@ namespace SCN.Common
 
 		static void Setup()
 		{
-			instance = LoadSource.LoadObject<DOTweenManager>("Dotween manager");
+			instance = LoadSource.LoadObject<DOTweenManager>(AssetName);
 			if (instance == null)
 			{
 				Debug.LogError("Create 'Dotween manager' in Resources. Scriptable Objects => DOTween");
@@ -32,6 +35,14 @@ namespace SCN.Common
 
 			_ = DOTween.Init(false, true, LogBehaviour.Verbose).SetCapacity(500, 50);
 		}
+
+#if UNITY_EDITOR
+		[MenuItem("SCN/Dotween/Settings")]
+		static void SelectSettingDotweenConfig()
+		{
+			Master.CreateAndSelectAssetInResource<DOTweenManager>(AssetName);
+		}
+#endif
 
 		#region Image
 		public Tweener TweenFillImageTime(Image image, float to, float duration
@@ -318,22 +329,43 @@ namespace SCN.Common
 			return TweenJumpTime(trans, to, jumpPower, numJump, duration, isLocal, isUsingUnscaleTime);
 		}
 
+		public Sequence TweenJumpVelocity(Transform trans, Vector3 to, float jumpPower, int numJump, float velocity
+			, bool isLocal = true, bool isUsingUnscaleTime = false)
+		{
+			var duration = Vector3.Distance(trans.position, to) / velocity;
+			return TweenJumpTime(trans, to, jumpPower, numJump, duration, isLocal, isUsingUnscaleTime);
+		}
 		public Sequence TweenJumpVelocity(Transform trans, Vector3 start, Vector3 to, float jumpPower, int numJump, float velocity
 			, bool isLocal = true, bool isUsingUnscaleTime = false)
 		{
 			trans.position = start;
-			var duration = Vector3.Distance(start, to) / velocity;
-			return TweenJumpTime(trans, to, jumpPower, numJump, duration, isLocal, isUsingUnscaleTime);
+			return TweenJumpVelocity(trans, to, jumpPower, numJump, velocity, isLocal, isUsingUnscaleTime);
 		}
 
-		public Tweener TweenRotate(Transform trans, Vector3 to, float duration, RotateMode mode, bool isUsingUnscaleTime = false)
+		public Tweener TweenRotate(Transform trans, Vector3 to, float duration, RotateMode mode
+			, bool isLocal = true, bool isUsingUnscaleTime = false)
 		{
-			return trans.DORotate(to, duration, mode).SetUpdate(isUsingUnscaleTime);
+			if (isLocal)
+			{
+				return trans.DOLocalRotate(to, duration, mode).SetUpdate(isUsingUnscaleTime);
+			}
+			else
+			{
+				return trans.DORotate(to, duration, mode).SetUpdate(isUsingUnscaleTime);
+			}
 		}
-		public Tweener TweenRotate(Transform trans, Vector3 start, Vector3 to, float duration, RotateMode mode, bool isUsingUnscaleTime = false)
+		public Tweener TweenRotate(Transform trans, Vector3 start, Vector3 to, float duration, RotateMode mode
+			, bool isLocal, bool isUsingUnscaleTime = false)
 		{
-			trans.localEulerAngles = start;
-			return TweenRotate(trans, to, duration, mode, isUsingUnscaleTime);
+			if (isLocal)
+			{
+				trans.localEulerAngles = start;
+			}
+			else
+			{
+				trans.eulerAngles = start;
+			}
+			return TweenRotate(trans, to, duration, mode, isLocal, isUsingUnscaleTime);
 		}
 
 		public Tweener TweenShake(Transform trans, float duration, float strength = 1, int vibrato = 10, float randomness = 90
@@ -431,12 +463,29 @@ namespace SCN.Common
 		#endregion
 
 		#region Time
-		public Tween TweenDelay(float delayTime, System.Action callback, bool isUsingUnscaleTime = false)
+		public Tween TweenDelay(float delayTime, TweenCallback callback, bool isUsingUnscaleTime = false)
 		{
-			return DOVirtual.DelayedCall(delayTime, () =>
-			{
-				callback?.Invoke();
-			}, isUsingUnscaleTime);
+			return DOVirtual.DelayedCall(delayTime, callback, isUsingUnscaleTime);
+		}
+
+		public Tweener TweenFloatTime(float from, float to, float duration, System.Action<float> onUpdate)
+		{
+			return DOVirtual.Float(from, to, duration, f => { onUpdate?.Invoke(f); });
+		}
+		public Tweener TweenFloatVelocity(float from, float to, float velocity, System.Action<float> onUpdate)
+		{
+			var duration = Mathf.Abs(from - to) / velocity;
+			return DOVirtual.Float(from, to, duration, f => { onUpdate?.Invoke(f); });
+		}
+
+		public float TweenEasedValue(float from, float to, float lifetimePercentage, Ease ease)
+		{
+			return DOVirtual.EasedValue(from, to, lifetimePercentage, ease);
+		}
+
+		public float TweenEasedValue(float from, float to, float lifetimePercentage, AnimationCurve easeCurve)
+		{
+			return DOVirtual.EasedValue(from, to, lifetimePercentage, easeCurve);
 		}
 		#endregion
 
@@ -455,144 +504,53 @@ namespace SCN.Common
 		}
 
 		#region extra methob
-		public Tweener AnimShowObject(Transform trans, System.Action onComplete = null)
+		public Tweener ScaleToShow(Transform obj)
 		{
-			return TweenScaleTime(trans, Vector3.one * 0.1f, Vector3.one, 0.5f).SetEase(Ease.OutBack)
-				.OnComplete(() => { onComplete?.Invoke(); });
+			return TweenScaleTime(obj, Vector3.zero, Vector3.one
+				, 0.4f).SetEase(Ease.OutBack);
 		}
 
-		public void ScaleBlinkEffect(Transform trans, System.Action onComplete = null, float scaleCoeff = 1.2f)
+		public Tweener ScaleToHide(Transform obj)
 		{
-			_ = TweenScaleVelocity(trans, scaleCoeff, 2).OnComplete(() =>
+			return TweenScaleTime(obj, Vector3.one, Vector3.zero
+				, 0.4f).SetEase(Ease.InBack);
+		}
+
+		public Sequence ShakeFail(Transform trans)
+		{
+			return DOTween.Sequence()
+				.Append(TweenRotate(trans, new Vector3(0, 0, 15), 0.1f, RotateMode.Fast))
+				.Append(TweenRotate(trans, new Vector3(0, 0, -15), 0.2f, RotateMode.Fast))
+				.Append(TweenRotate(trans, Vector3.zero, 0.1f, RotateMode.Fast));
+		}
+
+		public void ScaleConfirm(Transform trans, TweenCallback onComplete = null)
+		{
+			TweenScaleTime(trans, Vector3.one * 1.2f, 0.2f).OnComplete(() =>
 			{
-				_ = TweenScaleVelocity(trans, 1, 2).OnComplete(() =>
-				{
-					onComplete?.Invoke();
-				});
+				TweenScaleTime(trans, Vector3.one, 0.1f).OnComplete(onComplete);
 			});
 		}
 
-		public TweenerExtra ScaleBlinkEffectTime(Transform trans, float scaleTime
-			, float scaleValue, bool isLoop = false, System.Action onCompleteScale = null)
+		public Sequence JumpTo(Transform trans, Vector3 to)
 		{
-			var tweenerExtra = new TweenerExtra();
-			ScaleBlinkEffectTimeP(trans, scaleTime, scaleValue, isLoop, onCompleteScale, tweenerExtra);
-
-			return tweenerExtra;
-		}
-		TweenerExtra ScaleBlinkEffectTimeP(Transform trans, float scaleTime, float scaleValue
-			, bool isLoop = false, System.Action onCompleteScale = null, TweenerExtra tweenerExtra = null)
-		{
-			tweenerExtra.tweener = TweenScaleTime(trans, Vector3.one * scaleValue, scaleTime).OnComplete(() =>
-			{
-				tweenerExtra.tweener = TweenScaleTime(trans, Vector3.one, scaleTime).OnComplete(() =>
-				{
-					if (isLoop) ScaleBlinkEffectTimeP(trans, scaleTime, scaleValue
-						, isLoop, onCompleteScale, tweenerExtra);
-					onCompleteScale?.Invoke();
-				});
-			});
-
-			return tweenerExtra;
+			return TweenJumpTime(trans, to, 3, 1, 0.5f, false);
 		}
 
-		public TweenerExtra Rotate(Transform trans, float timePerSpin, bool isUsingUnscaleTime = false)
+		/// <summary>
+		/// Animation cua vat khi bi roi xuong mat phang
+		/// </summary>
+		public void FallToGroundAnim(Transform trans)
 		{
-			var tweenerExtra = new TweenerExtra();
-			Rotate(trans, timePerSpin, isUsingUnscaleTime, tweenerExtra);
-			return tweenerExtra;
-		}
-		TweenerExtra Rotate(Transform trans, float timePerSpin, bool isUsingUnscaleTime = false
-			, TweenerExtra tweenerExtra = null)
-		{
-			tweenerExtra.tweener = TweenRotate(trans, new Vector3(0, 0, -360), timePerSpin, RotateMode.LocalAxisAdd, isUsingUnscaleTime)
-			.OnComplete(() =>
-			{
-				Rotate(trans, timePerSpin, isUsingUnscaleTime, tweenerExtra);
-			});
-
-			return tweenerExtra;
-		}
-
-		public TweenerExtra BlinkImage(Image imageBlink, bool loop = true, System.Action onDone = null
-			, float timeBlink = 0.5f, bool isUsingUnscaleTime = false)
-		{
-			var tweenerExtra = new TweenerExtra();
-			BlinkImage(imageBlink, loop, onDone, timeBlink, isUsingUnscaleTime, tweenerExtra);
-			return tweenerExtra;
-		}
-		TweenerExtra BlinkImage(Image imageBlink, bool loop = true, System.Action onDone = null
-			, float timeBlink = 0.5f, bool isUsingUnscaleTime = false, TweenerExtra tweenerExtra = null)
-		{
-			tweenerExtra.tweener = TweenChangeAlphaImage(imageBlink, 0, 1, 0.5f, isUsingUnscaleTime).OnComplete(() =>
-			{
-				tweenerExtra.tweener = TweenChangeAlphaImage(imageBlink, 1, 0, 0.5f, isUsingUnscaleTime).OnComplete(() =>
-				{
-					if (loop)
-					{
-						BlinkImage(imageBlink, loop, onDone, timeBlink, isUsingUnscaleTime, tweenerExtra);
-					}
-
-					onDone?.Invoke();
-				});
-			});
-
-			return tweenerExtra;
-		}
-
-		public TweenerExtra SwingObj(Transform trans, float angle = 15, float time = 2f, bool isLoop = true
-		, System.Action onComplete = null, Ease easeType = Ease.Linear)
-		{
-			var tweenerExtra = new TweenerExtra();
-			SwingObj(trans, angle, time, isLoop, onComplete, easeType, tweenerExtra);
-
-			return tweenerExtra;
-		}
-		TweenerExtra SwingObj(Transform trans, float angle = 15, float time = 2f, bool isLoop = true
-			, System.Action onComplete = null, Ease easeType = Ease.Linear, TweenerExtra tweenerExtra = null)
-		{
-			tweenerExtra.tweener = TweenRotate(trans, new Vector3(0, 0, angle), time / 2, RotateMode.Fast).OnComplete(() =>
-			{
-				tweenerExtra.tweener = TweenRotate(trans, new Vector3(0, 0, -angle), time, RotateMode.Fast).OnComplete(() =>
-				{
-					tweenerExtra.tweener = TweenRotate(trans, new Vector3(0, 0, angle), time, RotateMode.Fast).OnComplete(() =>
-					{
-						tweenerExtra.tweener = TweenRotate(trans, new Vector3(0, 0, -angle), time, RotateMode.Fast).OnComplete(() =>
-						{
-							tweenerExtra.tweener = TweenRotate(trans, Vector3.zero, time / 2, RotateMode.Fast).OnComplete(() =>
-							{
-								if (isLoop) SwingObj(trans, angle, time, isLoop, onComplete, easeType, tweenerExtra);
-								onComplete?.Invoke();
-							}).SetEase(easeType);
-						}).SetEase(easeType);
-					}).SetEase(easeType);
-				}).SetEase(easeType);
-			}).SetEase(easeType);
-
-			return tweenerExtra;
-		}
-
-		public void ScaleOpen(Transform panel, System.Action onDone = null)
-		{
-			panel.gameObject.SetActive(true);
-			_ = TweenScaleTime(panel, Vector3.zero, Vector3.one, 0.4f).SetEase(Ease.OutBack)
-				.OnComplete(() => { onDone?.Invoke(); });
-		}
-
-		public void ScaleOff(Transform panel, System.Action onDone = null)
-		{
-			_ = TweenScaleTime(panel, Vector3.one, Vector3.zero, 0.4f).SetEase(Ease.InBack)
-				.OnComplete(() =>
-				{
-					panel.gameObject.SetActive(false);
-					onDone?.Invoke();
-				});
+			trans.DOKill();
+			DOTween.Sequence()
+				.Append(TweenScaleTime(
+					trans, new Vector3(1.1f, 0.9f, 1), 0.1f))
+				.Append(TweenScaleTime(
+					trans, new Vector3(0.9f, 1.1f, 1), 0.1f))
+				.Append(TweenScaleTime(
+					trans, Vector3.one, 0.05f));
 		}
 		#endregion
-
-		public class TweenerExtra
-		{
-			public Tweener tweener;
-		}
 	}
 }

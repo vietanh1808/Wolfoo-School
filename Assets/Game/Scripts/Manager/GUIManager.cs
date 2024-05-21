@@ -6,6 +6,7 @@ using DG.Tweening;
 using SCN.Common;
 using SCN.Tutorial;
 using SCN;
+using SCN.Ads;
 
 public class GUIManager : MonoBehaviour
 {
@@ -296,7 +297,7 @@ public class GUIManager : MonoBehaviour
 
         if (AdsManager.Instance.HasInters)
         {
-            AdsManager.Instance.ShowInterstitial(() =>
+            AdsManager.Instance.ShowInterstitial((value) =>
             {
                 FirebaseManager.instance.LogWatchAds("Inters");
                 if (isDestroy)
@@ -369,7 +370,7 @@ public class GUIManager : MonoBehaviour
         {
             if (AdsManager.Instance.HasInters)
             {
-                AdsManager.Instance.ShowInterstitial(() =>
+                AdsManager.Instance.ShowInterstitial((a) =>
                 {
                     FirebaseManager.instance.LogWatchAds("Inters");
                     OpenPanel(panelType);

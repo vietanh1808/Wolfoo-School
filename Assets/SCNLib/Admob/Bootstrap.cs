@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public partial class Bootstrap : MonoBehaviour
+namespace SCN.Ads
 {
-    [SerializeField] private bool preloadAds = true;
-    private void Awake()
+    public partial class Bootstrap : MonoBehaviour
     {
-        DontDestroyOnLoad(gameObject);
-        if (preloadAds)
+        partial void PreloadAds();
+        private void Awake()
         {
-            PreloadAds();
+            DontDestroyOnLoad(gameObject);
+            AdsManager.Instance.Preload(transform);
         }
     }
-    
-partial void PreloadAds();
 }

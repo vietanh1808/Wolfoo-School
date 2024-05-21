@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace SCN.Common
 {
-    [System.Serializable] public class ObjectPool
+    [System.Serializable]
+    public class ObjectPool
     {
         public System.Action<GameObject> OnObjRemoved;
 
@@ -12,6 +13,7 @@ namespace SCN.Common
         public List<GameObject> ListCurrent => listCurrent;
 
         readonly List<GameObject> listAvailable;
+        public List<GameObject> ListAvailable => listAvailable;
 
         readonly GameObject prefab;
         readonly Transform spawnerTrans;
@@ -74,6 +76,15 @@ namespace SCN.Common
             while (listCurrent.Count > 0)
             {
                 RemoveObj(listCurrent[0]);
+            }
+        }
+
+        public void DestroyListAvailable()
+        {
+            while (listAvailable.Count > 0)
+            {
+                Object.Destroy(listAvailable[0]);
+                listAvailable.RemoveAt(0);
             }
         }
     }

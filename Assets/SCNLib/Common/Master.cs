@@ -8,6 +8,20 @@ using UnityEngine.UI;
 
 namespace SCN.Common
 {
+    public enum Direction
+	{
+        Up = 0,
+        Down = 1,
+        Left = 2,
+        Right = 3,
+    }
+
+    public enum Orientation
+	{
+        Horizontal = 0,
+        Vertical = 1
+    }
+
     public static class Master
     {
         #region Event strigger
@@ -134,6 +148,32 @@ namespace SCN.Common
         }
         #endregion
 
+        #region Application
+        public static bool IsAndroid
+        {
+            get
+            {
+                if (Application.platform == RuntimePlatform.Android
+                    || Application.platform == RuntimePlatform.WindowsEditor)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public static bool IsPortrait
+        {
+			get
+			{
+                return Screen.width < Screen.height;
+            }
+        }
+        #endregion
+
         #region Others
         public static void ChangeAlpha(Image ima, float a)
         {
@@ -199,6 +239,34 @@ namespace SCN.Common
             rectTransform.pivot = pivot;                            // change the pivot
             rectTransform.localPosition -= deltaPosition;           // reverse the position change
         }
-        #endregion
+
+#if UNITY_EDITOR
+        public static T CreateSOInstance<T>(string assetPath) where T: ScriptableObject
+		{
+            T temp = ScriptableObject.CreateInstance<T>();
+
+            UnityEditor.AssetDatabase.CreateAsset(temp, assetPath);
+            UnityEditor.AssetDatabase.SaveAssets();
+            UnityEditor.AssetDatabase.Refresh();
+            UnityEditor.EditorUtility.FocusProjectWindow();
+
+            return temp;
+        }
+
+        public static void CreateAndSelectAssetInResource<T>(string assetName) where T : ScriptableObject
+		{
+            var settings = LoadSource.LoadObject<T>(assetName);
+            if (settings == null)
+            {
+                UnityEditor.Selection.activeObject = CreateSOInstance<T>($"Assets/Resources/{assetName}.asset");
+            }
+            else
+            {
+                UnityEditor.Selection.activeObject = settings;
+            }
+        }
+#endif
+
+#endregion
     }
 }

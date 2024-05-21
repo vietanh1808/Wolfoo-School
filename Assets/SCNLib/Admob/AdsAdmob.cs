@@ -4,36 +4,43 @@ using System.Collections.Generic;
 using GoogleMobileAds.Api;
 using UnityEngine;
 using DG.Tweening;
+using SCN.Common;
+using SCN.FirebaseLib.FA;
+
 namespace SCN.Ads
 {
-	public class AdsAdmob : MonoBehaviour
+	public class AdsAdmob : SafeCallBack
 	{
-		private BannerView bannerView;
+		BannerView bannerView;
 
-		private InterstitialAd inter;
+		InterstitialAd inter;
 
-		private RewardedAd rewardVideo;
+		RewardedAd rewardVideo;
+		RewardedInterstitialAd rewardInter;
 
-		private Queue<Action> safeCallback = new Queue<Action>();
+		Action onRewardSuccess;	
+		Action onRewardClose;
 
+        private AppOpenAd appOpenAd;
+        private Action onAOASuccess;
+        private Action onAOAFailed;
 
+        Action<bool> onInterSuccess;
 
-		private Action onRewardSuccess;
-		private Action onRewardClose;
+		bool isRequestingBanner;
 
-		private Action onInterSuccess;
+		bool isRequestingInter;
 
-		private bool isRequestingBanner;
+		bool isRequestingRewardVideo;
+		bool isRequestingRewardInter;
 
-		private bool isRequestingInter;
+		bool waitToShowBanner;
 
-		private bool isRequestingRewardVideo;
-
-		private bool waitToShowBanner;
-
-		private bool isBannerShowing;
-
-		private readonly int[] retryTimes = new int[14]
+		bool isBannerShowing;
+		bool isRewardInterReady;
+        private IEnumerator ieWaitInternet;
+        private bool IsInternetAvailable => (int)Application.internetReachability > 0;
+        readonly int[] retryTimes = new int[14]
 		{
 			0,
 			2,
@@ -51,23 +58,16 @@ namespace SCN.Ads
 			600
 		};
 
-		protected int retryRewardCoin = 0;
-		protected int retryRewardItem = 0;
+		int retryRewardItem = 0;
 
-		protected int retryInterNext = 0;
-		protected int retryInterRestart = 0;
+		int retryInters = 0;
 
-		protected int retryBanner = 0;
+		int retryBanner = 0;
+		int retryRewardInter = 0;
 
-		private IEnumerator ieWaitInternet;
+		AdmobConfig config;
 
-		public static AdsAdmob Instance
-		{
-			get;
-			private set;
-		}
-
-		private bool IsInternetAvailable => (int)Application.internetReachability > 0;
+		public AdmobConfig Config => config;
 
 		public float BannerHeight => (bannerView != null) ? bannerView.GetHeightInPixels() : 0f;
 
@@ -75,7 +75,11 @@ namespace SCN.Ads
 		{
 			get
 			{
-				if (inter != null && inter.IsLoaded())
+				if (config.IsBlockAds)
+				{
+					return false;
+				}
+				if (inter != null && inter.CanShowAd())
 				{
 					return true;
 				}
@@ -83,12 +87,15 @@ namespace SCN.Ads
 				return false;
 			}
 		}
-	
 		public bool HasRewardVideo
 		{
 			get
 			{
-				if (rewardVideo != null && rewardVideo.IsLoaded())
+				if (config.IsBlockAds)
+				{
+					return false;
+				}
+				if (rewardVideo != null && rewardVideo.CanShowAd())
 				{
 					return true;
 				}
@@ -97,40 +104,61 @@ namespace SCN.Ads
 			}
 		}
 	
+
 		public event Action OnRewardAdLoaded;
 
-		private void Awake()
+		public void Setup()
 		{
-			if (Instance != null && Instance != this)
+			if (Master.IsAndroid)
 			{
-				LogError("", "Initialize multiple times!");
-				Destroy(gameObject);
+				config = Resources.Load<AdmobConfig>(AdmobConfig.AssetNameAndroid);
+				if (config == null)
+				{
+					Debug.LogError($"Create <color=yellow>Admob config android</color> SO");
+				}
+			}
+			else
+			{
+				config = Resources.Load<AdmobConfig>(AdmobConfig.AssetNameIOS);
+				if (config == null)
+				{
+					Debug.LogError($"Create <color=yellow>Admob config ios</color> SO");
+				}
+			}
+
+			if (config == null || config.IsBlockAds)
+			{
 				return;
 			}
-		
-			Instance = this;
-			DontDestroyOnLoad(this.gameObject);
-			AdmobConfig instance = AdmobConfig.Instance;
-			List<String> deviceIds = new List<String>() { AdRequest.TestDeviceSimulator };
-			//deviceIds.Add("9E16377F-CEED-408A-9479-C280FD7467E6");
-			RequestConfiguration requestConfiguration =
-			  new RequestConfiguration.Builder()
-			  .SetTagForChildDirectedTreatment(TagForChildDirectedTreatment.True)
-			  .SetTestDeviceIds(deviceIds).build();
-			if (instance.UseRewardAd && string.IsNullOrEmpty(instance.RewardID))
+
+			RequestConfiguration requestConfiguration = new RequestConfiguration.Builder()
+			  .SetTagForChildDirectedTreatment(TagForChildDirectedTreatment.True).build();
+
+			if (!config.UseTestID)
 			{
-				LogError("RewardedVideo", "slot id was not config!");
+				if (config.UseBannerAd && string.IsNullOrEmpty(config.BannerID))
+				{
+					AdsManager.LogError(ConstValue.Banner, "slot id was not config!");
+				}
+				if (config.UseInterstitialAd && string.IsNullOrEmpty(config.InterID))
+				{
+					AdsManager.LogError(ConstValue.Interstitial, "slot id was not config!");
+				}
+				if (config.UseRewardVideoAd && string.IsNullOrEmpty(config.RewardVideoID))
+				{
+					AdsManager.LogError(ConstValue.RewardVideo, "slot id was not config!");
+				}
+				if (config.UseAOA && string.IsNullOrEmpty(config.AOAID))
+				{
+					AdsManager.LogError(ConstValue.RewardInter, "slot id was not config!");
+				}
 			}
-			if (instance.UseInterstitialAd && string.IsNullOrEmpty(instance.InterID))
-			{
-				LogError("Interstitial", "slot id was not config!");
-			}
-			if (instance.UseBannerAd && string.IsNullOrEmpty(instance.BannerID))
-			{
-				LogError("Banner", "slot id was not config!");
-			}
-			Debug.Log((object)"[Ads.Admob] SDK Initializing");
-			Log("", $"Start Initializing: appID = {instance.AppID}, useBanner={instance.UseBannerAd}, useInterstitial={instance.UseInterstitialAd}, useRewardVideo={instance.UseRewardAd}");
+			
+			AdsManager.Log("", $"Start Initializing: appID = {config.AppId}" +
+					$", useBanner={config.UseBannerAd}" +
+					$", useInterstitial={config.UseInterstitialAd}" +
+					$", useRewardVideo={config.UseRewardVideoAd}", config.EnableLog);
+
 			MobileAds.SetRequestConfiguration(requestConfiguration);
 			MobileAds.Initialize((Action<InitializationStatus>)delegate (InitializationStatus status)
 			{
@@ -148,281 +176,335 @@ namespace SCN.Ads
 						Debug.LogError((object)("[Ads.Admob] Adapter: " + item.Key + " not ready."));
 					}
 				}
-				if (AdmobConfig.Instance.AutoShowBanner)
+				if (config.AutoShowBanner)
 				{
 					RequestBanner();
 				}
 				RequestRewardVideo();
 				RequestInterstitial();
+                if (config.UseAOA)
+                {
+                    LoadAppOpenAd();
+                }
+
+
 			});
+
 			MobileAds.SetiOSAppPauseOnBackground(true);
 		}
-        private void Start()
+
+        private void Update()
         {
-				RequestInterstitial();
-		}
+            while (safeCallback.Count > 0)
+            {
+                Action action = null;
+                lock (safeCallback)
+                {
+                    action = safeCallback.Dequeue();
+                }
+                action?.Invoke();
+            }
+        }
 
-		private void Update()
-		{
-			while (safeCallback.Count > 0)
-			{
-				Action action = null;
-				lock (safeCallback)
-				{
-					action = safeCallback.Dequeue();
-				}
-				action?.Invoke();
-			}
-		}
+        private void SafeCallback(Action callback)
+        {
+            if (callback != null)
+            {
+                safeCallback.Enqueue(callback);
+            }
+        }
 
-		private void SafeCallback(Action callback)
-		{
-			if (callback != null)
-			{
-				safeCallback.Enqueue(callback);
-			}
-		}
+        private void DelayCallback(float delayTime, Action callback)
+        {
+            if (callback != null)
+            {
+                if (delayTime == 0f)
+                {
+                    SafeCallback(callback);
+                }
+                else
+                {
+                    ((MonoBehaviour)this).StartCoroutine(IEDelayCallback(delayTime, callback));
+                }
+            }
+        }
 
-		private void DelayCallback(float delayTime, Action callback)
-		{
-			if (callback != null)
-			{
-				if (delayTime == 0f)
-				{
-					SafeCallback(callback);
-				}
-				else
-				{
-					((MonoBehaviour)this).StartCoroutine(IEDelayCallback(delayTime, callback));
-				}
-			}
-		}
+        private IEnumerator IEDelayCallback(float delayTime, Action callback)
+        {
+            yield return (object)new WaitForSecondsRealtime(delayTime);
+            callback?.Invoke();
+        }
 
-		private IEnumerator IEDelayCallback(float delayTime, Action callback)
-		{
-			yield return (object)new WaitForSecondsRealtime(delayTime);
-			callback?.Invoke();
-		}
+        private void WaitInternet(Action callback)
+        {
+            if (callback != null)
+            {
+                ((MonoBehaviour)this).StartCoroutine(IEWaitInternet(callback));
+            }
+        }
 
-		private void WaitInternet(Action callback)
-		{
-			if (callback != null)
-			{
-				((MonoBehaviour)this).StartCoroutine(IEWaitInternet(callback));
-			}
-		}
+        private IEnumerator IEWaitInternet(Action callback)
+        {
+            if (ieWaitInternet == null)
+            {
+                ieWaitInternet = (IEnumerator)new WaitUntil((Func<bool>)(() => IsInternetAvailable));
+            }
+            yield return ieWaitInternet;
+            callback?.Invoke();
+        }
 
-		private IEnumerator IEWaitInternet(Action callback)
-		{
-			if (ieWaitInternet == null)
-			{
-				ieWaitInternet = (IEnumerator)new WaitUntil((Func<bool>)(() => IsInternetAvailable));
-			}
-			yield return ieWaitInternet;
-			callback?.Invoke();
-		}
+        private AdRequest CreateAdRequest()
+        {
+            //IL_0001: Unknown result type (might be due to invalid IL or missing references)
+            return new AdRequest.Builder()
+        .Build();
+        }
 
-		private AdRequest CreateAdRequest()
-		{
-			//IL_0001: Unknown result type (might be due to invalid IL or missing references)
-			return new AdRequest.Builder()
-		.Build();
-		}
+        private void Log(string adType, string msg)
+        {
+            if (config.EnableLog)
+            {
+                Debug.Log((object)("[Ads.Admob." + adType + "] " + msg));
+            }
+        }
 
-		private void Log(string adType, string msg)
-		{
-			if (AdmobConfig.Instance.EnableLog)
-			{
-				Debug.Log((object)("[Ads.Admob." + adType + "] " + msg));
-			}
-		}
+        private void LogError(string adType, string msg)
+        {
+            Debug.LogError((object)("[Ads.Admob." + adType + "] " + msg));
+        }
 
-		private void LogError(string adType, string msg)
-		{
-			Debug.LogError((object)("[Ads.Admob." + adType + "] " + msg));
-		}
+        private void RequestBanner()
+        {
+            if (config.IsBlockAds) return;
+            if (!config.UseBannerAd || isRequestingBanner)
+            {
+                return;
+            }
+            if (retryBanner >= retryTimes.Length)
+            {
+                retryBanner = retryTimes[retryTimes.Length - 1];
+            }
+            int num = retryTimes[retryBanner];
+            isRequestingBanner = true;
+            Log("Banner", $"Will Request after {num}s, retry={retryBanner}");
+            DelayCallback(num, delegate
+            {
+                if (IsInternetAvailable)
+                {
+                    DoRequestBanner();
+                }
+                else
+                {
+                    LogError("Banner", "Request: Waiting for internet...");
+                    WaitInternet(DoRequestBanner);
+                }
+            });
+        }
 
-		private void RequestBanner()
-		{
-			if (!AdmobConfig.Instance.UseBannerAd || isRequestingBanner)
-			{
-				return;
-			}
-			if (retryBanner >= retryTimes.Length)
-			{
-				retryBanner = retryTimes[retryTimes.Length - 1];
-			}
-			int num = retryTimes[retryBanner];
-			isRequestingBanner = true;
-			Log("Banner", $"Will Request after {num}s, retry={retryBanner}");
-			DelayCallback(num, delegate
-			{
-				if (IsInternetAvailable)
-				{
-					DoRequestBanner();
-				}
-				else
-				{
-					LogError("Banner", "Request: Waiting for internet...");
-					WaitInternet(DoRequestBanner);
-				}
-			});
-		}
+        private void DoRequestBanner()
+        {
 
-		private void DoRequestBanner()
-		{
-			//IL_003a: Unknown result type (might be due to invalid IL or missing references)
-			//IL_0044: Expected O, but got Unknown
-			Log("Banner", "Request starting...");
-			DestroyBanner();
-			bannerView = new BannerView(AdmobConfig.Instance.BannerID, GetAdsize(), (AdPosition)(AdmobConfig.Instance.ShowBannerOnBottom ? 1 : 0));
-			bannerView.OnAdLoaded +=OnBannerAdLoaded;
-			bannerView.OnAdFailedToLoad+= OnBannerAdFailedToLoad;
-			bannerView.OnAdOpening+= OnBannerAdOpened;
-			bannerView.OnAdClosed+= OnBannerAdClosed;
-			bannerView.LoadAd(CreateAdRequest());
-		}
+            //IL_003a: Unknown result type (might be due to invalid IL or missing references)
+            //IL_0044: Expected O, but got Unknown
+            Log("Banner", "Request starting...");
+            DestroyBanner();
+            bannerView = new BannerView(config.BannerID, GetAdsize(), (AdPosition)(config.ShowBannerOnBottom ? 1 : 0));
+            bannerView.OnBannerAdLoaded += () => OnBannerAdLoaded();
+            bannerView.OnBannerAdLoadFailed += (LoadAdError error) => OnBannerAdFailedToLoad(error);
+            bannerView.OnAdImpressionRecorded += () => OnBannerAdOpened();
 
-		private AdSize GetAdsize()
-		{
-			var configBanner = AdmobConfig.Instance.BannerSize;
+            bannerView.LoadAd(CreateAdRequest());
+        }
+
+        private AdSize GetAdsize()
+        {
+            var configBanner = config.BannerSize;
             switch (configBanner)
             {
-				case BannerSize.SmartBanner:
-				return AdSize.SmartBanner;
-					break;
-				case BannerSize.Banner_320x50:
-					return AdSize.Banner;
-					break;
-				case BannerSize.IABBanner_468x60:
-					return AdSize.IABBanner;
-					break;
-				case BannerSize.Leaderboard_728x90:
-					return AdSize.Leaderboard;
-					break;
-				default: return AdSize.SmartBanner;
-			}
-		}
+                case BannerSizeOp.SmartBanner:
+                    return AdSize.SmartBanner;
+                    break;
+                case BannerSizeOp.Banner_320x50:
+                    return AdSize.Banner;
+                    break;
+                case BannerSizeOp.IABBanner_468x60:
+                    return AdSize.IABBanner;
+                    break;
+                case BannerSizeOp.Leaderboard_728x90:
+                    return AdSize.Leaderboard;
+                    break;
+                default: return AdSize.SmartBanner;
+            }
+        }
 
-		public void ShowBanner()
-		{
-			if (!isBannerShowing)
-			{
-				if (bannerView != null)
-				{
-					waitToShowBanner = false;
-					isBannerShowing = true;
-					bannerView.Show();
-					Log("Banner", "Show Start.");
-				}
-				else
-				{
-					waitToShowBanner = true;
-					RequestBanner();
-				}
-			}
-		}
+        public void ShowBanner()
+        {
+            if (!isBannerShowing)
+            {
+                if (bannerView != null)
+                {
+                    waitToShowBanner = false;
+                    isBannerShowing = true;
+                    bannerView.Show();
+                    Log("Banner", "Show Start.");
+                }
+                else
+                {
+                    waitToShowBanner = true;
+                    RequestBanner();
+                }
+            }
+        }
 
-		public void HideBanner()
-		{
-			if (bannerView != null)
-			{
-				waitToShowBanner = false;
-				isBannerShowing = false;
-				bannerView.Hide();
-			}
-		}
+        public void HideBanner()
+        {
+            if (bannerView != null)
+            {
+                waitToShowBanner = false;
+                isBannerShowing = false;
+                bannerView.Hide();
+            }
+        }
 
-		public void DestroyBanner()
-		{
-			if (bannerView != null)
-			{
-				waitToShowBanner = false;
-				isBannerShowing = false;
-				bannerView.Destroy();
-				bannerView = null;
-			}
-		}
+        public void DestroyBanner()
+        {
+            if (bannerView != null)
+            {
+                waitToShowBanner = false;
+                isBannerShowing = false;
+                bannerView.Destroy();
+                bannerView = null;
+            }
+        }
 
-		private void RequestInterstitial()
-		{
-			if (!AdmobConfig.Instance.UseInterstitialAd || isRequestingInter)
-			{
-				return;
-			}
-			if (retryInterNext >= retryTimes.Length)
-			{
-				retryInterNext = retryTimes[retryTimes.Length - 1];
-			}
-			int num = retryTimes[retryInterNext];
-			isRequestingInter = true;
-			Log("Interstitial", $"Will Request after {num}s, retry={retryInterNext}");
-			DelayCallback(num, delegate
-			{
-				if (IsInternetAvailable)
-				{
-					DoRequestInterstitial();
-				}
-				else
-				{
-					LogError("Interstitial", "Request: Waiting for internet...");
-					WaitInternet(DoRequestInterstitial);
-				}
-			});
-		}
-		
+        private void RequestInterstitial()
+        {
+            if (config.IsBlockAds) return;
+            if (!config.UseInterstitialAd || isRequestingInter)
+            {
+                return;
+            }
+            if (retryInters >= retryTimes.Length)
+            {
+                retryInters = retryTimes[retryTimes.Length - 1];
+            }
+            int num = retryTimes[retryInters];
+            isRequestingInter = true;
+            Log("Interstitial", $"Will Request after {num}s, retry={retryInters}");
+            DelayCallback(num, delegate
+            {
+                if (IsInternetAvailable)
+                {
+                    DoRequestInterstitial();
+                }
+                else
+                {
+                    LogError("Interstitial", "Request: Waiting for internet...");
+                    WaitInternet(DoRequestInterstitial);
+                }
+            });
+        }
 
-		private void DoRequestInterstitial()
-		{
-			//IL_0024: Unknown result type (might be due to invalid IL or missing references)
-			//IL_002e: Expected O, but got Unknown
-			Log("Interstitial", "Request starting...");
-			//DestroyInter();
-			inter = new InterstitialAd(AdmobConfig.Instance.InterID);
-			inter.OnAdLoaded += OnInterLoaded;
-			inter.OnAdFailedToLoad += OnInterFailedToLoad;
-			inter.OnAdOpening += OnInterstitialAdOpened;
-			inter.OnAdClosed += OnInterClosed;
-			inter.LoadAd(CreateAdRequest());
-		}
 
-		public void ShowInterstitial(Action callback = null)
-		{
-			if (HasInter)
-			{
-				onInterSuccess = callback;
-				Log("Interstitial", "Show start..");
-				inter.Show();
-			}
-			else
-			{
-				Log("Interstitial", "Show failed: ad not ready. Invoke callback.");
-				callback?.Invoke();
-				RequestInterstitial();
-			}
-		}
-		public void DestroyInter()
-		{
-			if (inter != null)
-			{
-				inter.Destroy();
-				inter = null;
-			}
-		}
-   
+        private void DoRequestInterstitial()
+        {
+            //IL_0024: Unknown result type (might be due to invalid IL or missing references)
+            //IL_002e: Expected O, but got Unknown
+            Log("Interstitial", "Request starting...");
+            //DestroyInter();
+            InterstitialAd.Load(config.InterID, CreateAdRequest(), (InterstitialAd ad, LoadAdError loadError) =>
+            {
+                if (loadError != null)
+                {
+                    OnInterFailedToLoad(loadError);
+                    return;
+                }
+                else if (ad == null)
+                {
+                    Log("Interstitial", "Interstitial ad failed to load.");
+                    return;
+                }
+                Log("Interstitial", "Interstitial ad loaded.");
+                inter = ad;
+                OnInterLoaded();
+                ad.OnAdFullScreenContentOpened += () =>
+                {
+                    Log("Interstitial", "Interstitial ad opening.");
+                    OnInterstitialAdOpened();
+                };
+                ad.OnAdFullScreenContentClosed += () =>
+                {
+                    Log("Interstitial", "Interstitial ad closed.");
+                    OnInterClosed();
+                };
+                ad.OnAdImpressionRecorded += () =>
+                {
+                    Log("Interstitial", "Interstitial ad recorded an impression.");
+                    OnInterstitialAdImpressionRecorded();
+                };
+                ad.OnAdClicked += () =>
+                {
+                    Log("Interstitial", "Interstitial ad recorded a click.");
+                };
+                ad.OnAdFullScreenContentFailed += (AdError error) =>
+                {
+                    Log("Interstitial", "Interstitial ad failed to show with error: " +
+                                error.GetMessage());
+                };
+                ad.OnAdPaid += (AdValue adValue) =>
+                {
+                    string msg = string.Format("{0} (currency: {1}, value: {2}",
+                                               "Interstitial ad received a paid event.",
+                                               adValue.CurrencyCode,
+                                               adValue.Value);
+                    Log("Interstitial", msg);
+                };
+            });
+        }
+
+        public void ShowInterstitial(Action<bool> callback = null)
+        {
+            if (config.IsBlockAds)
+            {
+                callback?.Invoke(false);
+                return;
+            }
+            if (HasInter)
+            {
+                onInterSuccess = callback;
+                Log("Interstitial", "Show start..");
+                inter.Show();
+            }
+            else
+            {
+                Log("Interstitial", "Show failed: ad not ready. Invoke callback.");
+                callback?.Invoke(true);
+                RequestInterstitial();
+            }
+        }
+        public void DestroyInter()
+        {
+            if (inter != null)
+            {
+                inter.Destroy();
+                inter = null;
+            }
+        }
+
         #region RewardVideo
         private void RequestRewardVideo()
         {
-            if (!AdmobConfig.Instance.UseRewardAd || isRequestingRewardVideo)
+            if (config.IsBlockAds) return;
+            if (!config.UseRewardVideoAd || isRequestingRewardVideo)
             {
                 return;
             }
             if (retryRewardItem >= retryTimes.Length)
             {
-				retryRewardItem = retryTimes[retryTimes.Length - 1];
+                retryRewardItem = retryTimes[retryTimes.Length - 1];
             }
             int num = retryTimes[retryRewardItem];
-			isRequestingRewardVideo = true;
+            isRequestingRewardVideo = true;
             Log("RewardedVideo", $"Request after {num}s, retry={retryRewardItem}");
             DelayCallback(num, delegate
             {
@@ -443,152 +525,342 @@ namespace SCN.Ads
             //IL_001d: Unknown result type (might be due to invalid IL or missing references)
             //IL_0027: Expected O, but got Unknown
             Log("RewardedVideo", "Request starting...");
-            rewardVideo = new RewardedAd(AdmobConfig.Instance.RewardID);
-			rewardVideo.OnAdLoaded += OnRewardLoaded;
-			rewardVideo.OnAdOpening += OnRewardOpening;
-			rewardVideo.OnAdFailedToShow += OnRewardFailedToShow;
-			rewardVideo.OnAdClosed += OnRewardClosed;
-			rewardVideo.OnUserEarnedReward += OnRewardEarnedReward;
-			rewardVideo.LoadAd(CreateAdRequest());
+            RewardedAd.Load(config.RewardVideoID, CreateAdRequest(), (RewardedAd ad, LoadAdError loadError) =>
+            {
+                if (loadError != null)
+                {
+                    Log("RewardedVideo", "Rewarded ad failed to load with error: " +
+                                loadError.GetMessage());
+                    OnRewardFailedToLoad(loadError);
+                    return;
+                }
+                else if (ad == null)
+                {
+                    Log("RewardedVideo", "Rewarded ad failed to load.");
+                    return;
+                }
+
+                Log("RewardedVideo", "Rewarded ad loaded.");
+                OnRewardLoaded();
+                rewardVideo = ad;
+
+                ad.OnAdFullScreenContentOpened += () =>
+                {
+
+                    Log("RewardedVideo", "Rewarded ad opening.");
+                    OnRewardOpening();
+                };
+                ad.OnAdFullScreenContentClosed += () =>
+                {
+
+                    Log("RewardedVideo", "Rewarded ad closed.");
+                    OnRewardClosed();
+                };
+                ad.OnAdImpressionRecorded += () =>
+                {
+
+                    Log("RewardedVideo", "Rewarded ad recorded an impression.");
+                };
+                ad.OnAdClicked += () =>
+                {
+                    OnRewardClick();
+                    Log("RewardedVideo", "Rewarded ad recorded a click.");
+                };
+                ad.OnAdFullScreenContentFailed += (AdError error) =>
+                {
+                    OnRewardFailedToShow(error);
+                    Log("RewardedVideo", "Rewarded ad failed to show with error: " +
+                               error.GetMessage());
+                };
+                ad.OnAdPaid += (AdValue adValue) =>
+                {
+                    string msg = string.Format("{0} (currency: {1}, value: {2}",
+                                               "Rewarded ad received a paid event.",
+                                               adValue.CurrencyCode,
+                                               adValue.Value);
+
+                    Log("RewardedVideo", (msg));
+                };
+            });
         }
 
         public void ShowRewardVideo(Action onSuccess, Action onClosed = null)
         {
+            if (config.IsBlockAds)
+            {
+                onSuccess?.Invoke();
+                Debug.Log("Here 1");
+                return;
+            }
             if (HasRewardVideo)
             {
-				onRewardSuccess = onSuccess;
-				onRewardClose = onClosed;
+                onRewardSuccess = onSuccess;
+                onRewardClose = onClosed;
                 Log("RewardedVideo", "Show start...");
-				rewardVideo.Show();
+                rewardVideo.Show((Reward reward) => {
+                    Log("RewardedVideo", "Rewarded ad granted a reward: " + reward.Amount);
+                    OnRewardEarnedReward();
+
+                });
             }
             else
             {
                 Log("RewardedVideo", "Show failed: ad not ready. Invoke onClosed callback.");
                 onClosed?.Invoke();
-				RequestRewardVideo();
+                RequestRewardVideo();
             }
         }
-        private void OnRewardLoaded(object sender, EventArgs args)
+        private void OnRewardLoaded()
         {
             Log("RewardedVideo", "OnAdLoaded.");
-			retryRewardItem = 0;
-			isRequestingRewardVideo = false;
+            retryRewardItem = 0;
+            isRequestingRewardVideo = false;
             SafeCallback(this.OnRewardAdLoaded);
         }
 
-        private void OnRewardFailedToLoad(object sender, AdErrorEventArgs args)
+        private void OnRewardFailedToLoad(LoadAdError loadError)
         {
-            Debug.LogError("RewardedVideo" + "OnAdFailedToLoad: " + args.Message);
-			isRequestingRewardVideo = false;
-            if (AdmobConfig.Instance.RequestOnLoadFailed)
+            Debug.LogError("RewardedVideo" + "OnAdFailedToLoad: " + loadError.GetMessage());
+            isRequestingRewardVideo = false;
+            if (config.RequestOnLoadFailed)
             {
-				retryRewardItem++;
-				RequestRewardVideo();
+                retryRewardItem++;
+                RequestRewardVideo();
             }
         }
 
-        private void OnRewardOpening(object sender, EventArgs args)
+        private void OnRewardOpening()
         {
             Log("RewardedVideo", "OnAdOpening...");
+            Debug.Log("Here OnRewardOpening");
         }
 
-        private void OnRewardFailedToShow(object sender, AdErrorEventArgs args)
+        private void OnRewardFailedToShow(AdError loadError)
         {
-            LogError("RewardedVideo", "OnAdFailedToShow: " + args.Message + ".");
+            LogError("RewardedVideo", "OnAdFailedToShow: " + loadError.GetMessage() + ".");
             SafeCallback(onRewardClose);
-			RequestRewardVideo();
+            RequestRewardVideo();
+            Debug.Log("Here OnRewardFailedToShow");
         }
 
-        private void OnRewardClosed(object sender, EventArgs args)
+        private void OnRewardClosed()
         {
             Log("RewardedVideo", "OnAdClosed.");
             SafeCallback(onRewardClose);
-			RequestRewardVideo();
+            RequestRewardVideo();
+            Debug.Log("Here OnRewardClosed");
         }
 
-        private void OnRewardEarnedReward(object sender, Reward args)
+        private void OnRewardEarnedReward()
         {
             Log("RewardedVideo", "OnEarnedReward successfully.");
             SafeCallback(onRewardSuccess);
+            Debug.Log("Here OnRewardEarnedReward");
+        }
+        private void OnRewardClick()
+        {
+
         }
         #endregion
         #region InterBanner
-        private void OnBannerAdLoaded(object sender, EventArgs args)
-		{
-			Log("Banner", "OnAdLoaded.");
-			retryBanner = 0;
-			isRequestingBanner = false;
-			if (AdmobConfig.Instance.AutoShowBanner || waitToShowBanner)
-			{
-				ShowBanner();
-			}
-		}
+        private void OnBannerAdLoaded()
+        {
+            Log("Banner", "OnAdLoaded.");
+            retryBanner = 0;
+            isRequestingBanner = false;
+            if (config.AutoShowBanner || waitToShowBanner)
+            {
+                ShowBanner();
+            }
+        }
 
-		private void OnBannerAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
-		{
-			LogError("Banner", "OnAdFailedToLoad: " + args.LoadAdError + ".");
-			isRequestingBanner = false;
-			retryBanner++;
-			RequestBanner();
-		}
+        private void OnBannerAdFailedToLoad(LoadAdError error)
+        {
+            LogError("Banner", "OnAdFailedToLoad: " + error.GetMessage() + ".");
+            isRequestingBanner = false;
+            retryBanner++;
+            RequestBanner();
+        }
 
-		private void OnBannerAdOpened(object sender, EventArgs args)
-		{
-			Log("Banner", "OnAdOpened...");
-		}
+        private void OnBannerAdOpened()
+        {
+            Log("Banner", "OnAdOpened...");
+        }
 
-		private void OnBannerAdClosed(object sender, EventArgs args)
-		{
-			Log("Banner", "OnAdClosed.");
-			isBannerShowing = false;
-			if (AdmobConfig.Instance.AutoShowBanner)
-			{
-				RequestBanner();
-			}
-		}
+        private void OnBannerAdClosed(object sender, EventArgs args)
+        {
+            Log("Banner", "OnAdClosed.");
+            isBannerShowing = false;
+            if (config.AutoShowBanner)
+            {
+                RequestBanner();
+            }
+        }
 
-		private void OnBannerAdLeftApplication(object sender, EventArgs args)
-		{
-			Log("Banner", "OnAdLeftApplication.");
-		}
+        private void OnBannerAdLeftApplication(object sender, EventArgs args)
+        {
+            Log("Banner", "OnAdLeftApplication.");
+        }
 
-		private void OnInterLoaded(object sender, EventArgs args)
-		{
-			Log("Interstitial", "OnAdLoaded.");
-			retryInterNext = 0;
-			isRequestingInter = false;
-		}
+        private void OnInterLoaded()
+        {
+            Log("Interstitial", "OnAdLoaded.");
+            retryInters = 0;
+            isRequestingInter = false;
+        }
 
 
-		private void OnInterFailedToLoad(object sender, AdFailedToLoadEventArgs args)
-		{
-			LogError("Interstitial","OnAdFailedToLoad: " + args.LoadAdError + ".");
-			isRequestingInter = false;
-			if (AdmobConfig.Instance.RequestOnLoadFailed)
-			{
-				retryInterNext++;
-				RequestInterstitial();
-			}
-		}
-	
-		private void OnInterstitialAdOpened(object sender, EventArgs args)
-		{
-			Log("Interstitial", "OnAdOpened...");
-		}
+        private void OnInterFailedToLoad(LoadAdError loadError)
+        {
+            LogError("Interstitial", "OnAdFailedToLoad: " + loadError.GetMessage() + ".");
+            isRequestingInter = false;
+            if (config.RequestOnLoadFailed)
+            {
+                retryInters++;
+                RequestInterstitial();
+            }
+        }
 
-		private void OnInterClosed(object sender, EventArgs args)
-		{
-			Time.timeScale = 1;
-			Log("Interstitial", "OnAdClosed.");
-			SafeCallback(onInterSuccess);
-			RequestInterstitial();
-		}
-		private void OnInterstitialAdLeftApplication(object sender, EventArgs args)
-		{
-			Log("Interstitial", "OnAdLeftApplication.");
-		}
+        private void OnInterstitialAdOpened()
+        {
+            Log("Interstitial", "OnAdOpened...");
+        }
+
+        private void OnInterClosed()
+        {
+            Time.timeScale = 1;
+            Log("Interstitial", "OnAdClosed.");
+            SafeCallback(()=>onInterSuccess(true));
+            RequestInterstitial();
+        }
+        private void OnInterstitialAdLeftApplication(object sender, EventArgs args)
+        {
+            Log("Interstitial", "OnAdLeftApplication.");
+        }
+        private void OnInterstitialAdImpressionRecorded()
+        {
+            Time.timeScale = 1;
+            Log("Interstitial", "OnAdClosed.");
+            // SafeCallback(onInterSuccess);
+            RequestInterstitial();
+        }
+        #endregion
+        #region AOA
+        public void LoadAppOpenAd()
+        {
+            // Clean up the old ad before loading a new one.
+            if (appOpenAd != null)
+            {
+                appOpenAd.Destroy();
+                appOpenAd = null;
+            }
+
+            Debug.Log("Loading the app open ad.");
+
+            // Create our request used to load the ad.
+            var adRequest = new AdRequest();
+
+            // send the request to load the ad.
+            AppOpenAd.Load(config.AOAID, adRequest,
+                (AppOpenAd ad, LoadAdError error) =>
+                {
+                    // if error is not null, the load request failed.
+                    if (error != null || ad == null)
+                    {
+                        Debug.LogError("app open ad failed to load an ad " +
+                                       "with error : " + error);
+                        return;
+                    }
+
+                    Debug.Log("App open ad loaded with response : "
+                              + ad.GetResponseInfo());
+
+                    appOpenAd = ad;
+                    RegisterEventHandlers(ad);
+                });
+        }
+        private void RegisterEventHandlers(AppOpenAd ad)
+        {
+            // Raised when the ad is estimated to have earned money.
+            ad.OnAdPaid += (AdValue adValue) =>
+            {
+                Debug.Log(String.Format("App open ad paid {0} {1}.",
+                    adValue.Value,
+                    adValue.CurrencyCode));
+            };
+            // Raised when an impression is recorded for an ad.
+            ad.OnAdImpressionRecorded += () =>
+            {
+                Debug.Log("App open ad recorded an impression.");
+            };
+            // Raised when a click is recorded for an ad.
+            ad.OnAdClicked += () =>
+            {
+                Debug.Log("App open ad was clicked.");
+            };
+            // Raised when an ad opened full screen content.
+            ad.OnAdFullScreenContentOpened += () =>
+            {
+                Debug.Log("App open ad full screen content opened.");
+            };
+            // Raised when the ad closed full screen content.
+            ad.OnAdFullScreenContentClosed += () =>
+            {
+                Debug.Log("App open ad full screen content closed.");
+                SafeCallback(onAOASuccess);
+                LoadAppOpenAd();
+            };
+            // Raised when the ad failed to open full screen content.
+            ad.OnAdFullScreenContentFailed += (AdError error) =>
+            {
+                Debug.LogError("App open ad failed to open full screen content " +
+                               "with error : " + error);
+            };
+        }
+        public bool IsAOAAvailable
+        {
+            get
+            {
+                return appOpenAd != null
+                       && appOpenAd.CanShowAd();
+            }
+        }
+        public void ShowAppOpenAd(Action onSuccess, Action onClosed = null)
+        {
+            onAOASuccess = onSuccess;
+            onAOAFailed = onClosed;
+            if (appOpenAd != null && appOpenAd.CanShowAd())
+            {
+                Debug.Log("Showing app open ad.");
+                appOpenAd.Show();
+            }
+            else
+            {
+                Debug.LogError("App open ad is not ready yet.");
+            }
+        }
         #endregion
 
-    }
+
+        void HandleAdPaidEvent(AdValueEventArgs args, string unitID)
+		{
+			AdValue adValue = args.AdValue;
+			// Log an event with ad value parameters
+			Firebase.Analytics.Parameter[] LTVParameters =
+			{
+				// Log ad value in micros.
+				new Firebase.Analytics.Parameter("valuemicros", adValue.Value),
+				// These values below won’t be used in ROAS recipe.
+				// But log for purposes of debugging and future reference.
+				new Firebase.Analytics.Parameter("currency", adValue.CurrencyCode),
+				new Firebase.Analytics.Parameter("precision", (int)adValue.Precision),
+				new Firebase.Analytics.Parameter("adunitid", unitID),
+				new Firebase.Analytics.Parameter("network",
+				rewardVideo.GetResponseInfo().GetMediationAdapterClassName())
+			};
+
+			GAManager.Instance.LogEvent("paid_ad_impression", LTVParameters);
+		}
+	}
 }
 

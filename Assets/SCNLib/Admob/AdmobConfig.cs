@@ -1,152 +1,100 @@
-﻿using UnityEngine;
+﻿using SCN.Common;
+using UnityEngine;
 
 namespace SCN.Ads
 {
-	[CreateAssetMenu(fileName = "AdmobConfig", menuName = "Ads/AdmobConfig")]
+	[CreateAssetMenu(fileName = AssetNameCommon, menuName = "SCN/Scriptable Objects/Admob Config")]
 	public class AdmobConfig : ScriptableObject
 	{
-		public const string ResourcePath = "AdmobConfig";
+		public const string AssetNameCommon = "Admob config android-ios";
+		public const string AssetNameAndroid = "Admob config android";
+		public const string AssetNameIOS = "Admob config ios";
 
-		private static AdmobConfig _instance;
-
-		public bool EnableLog = false;
+		[SerializeField] bool enableLog = false;
 
 		[Tooltip("if enableTest, you no need to fill any id.")]
-		public bool UseTestID = false;
+		[SerializeField] bool useTestID = false;
+
+		[Header("BLOCK REQUEST")]
+		[SerializeField] bool isBlockAds = false;
 
 		[Header("Retry to request?")]
-		[Tooltip("By default, when the ad request failed, it will retry to request with the increasing delay time. \nIf disable this, it will not retry any one until the method `Show` be called.")]
-		public bool RequestOnLoadFailed = true;
+		[Tooltip("By default, when the ad request failed, it will retry to request with the increasing delay time" +
+			". \nIf disable this, it will not retry any one until the method `Show` be called.")]
+		[SerializeField] bool requestOnLoadFailed = true;
 
 		[Header("App id")]
-		[SerializeField]
-		private string appID_android;
-
-		[SerializeField]
-		private string appID_iOS;
+		[SerializeField] string appID;
 
 		[Header("Banner")]
-		[SerializeField]
-		private bool useBannerAd = true;
+		[SerializeField] bool useBannerAd = false;
+		[SerializeField] string bannerID;
 
-		[SerializeField]
-		private string bannerID_android;
-
-		[SerializeField]
-		private string bannerID_iOS;
-
-		public BannerSize BannerSize = BannerSize.SmartBanner;
-
-		[SerializeField]
+		[SerializeField] BannerSizeOp bannerSize = BannerSizeOp.SmartBanner;
+		  
 		[Tooltip("Set to false if you want to call method 'ShowBanner' normaly")]
-		private bool autoShowBanner = true;
+		[SerializeField] bool autoShowBanner = false;
 
-		[SerializeField]
 		[Tooltip("Set to false if you want to show banner on top")]
-		private bool showBannerOnBottom = true;
+		[SerializeField] bool showBannerOnBottom = false;
 
-		[Header("Interstitial Next")]
-		[SerializeField]
-		private bool useInterstitialAd = true;
-
-		[SerializeField]
-		private string inter_ID_android;
-
-		[SerializeField]
-		private string inter_ID_iOS;
+		[Header("Interstitial")]
+		[SerializeField] bool useInterstitialAd = false;
+		[SerializeField] string interID;
+		[SerializeField] float inter_interval = 0;
 
 		[Header("RewardVideo")]
-		[SerializeField]
-		private bool useRewardVideoAd = true;
+		[SerializeField] bool useRewardVideoAd = false;
+		[SerializeField] string rewardVideoID;
+		[SerializeField] float rv_interval = 0;
 
-		[SerializeField]
-		private string reward_ID_android;
-		[SerializeField]
-		private string reward_ID_ios;
+		[Header("AppOpenAds")]
+		[SerializeField] bool useAOA = false;
+		[SerializeField] string aoaID;
 
-		//[Header("ADS BACKUP")]
-		//[Tooltip("When admob has no ad, this backup will be use")]
-		//public bool UseAdUnityBackup = true;
+        [Header("NativeAds")]
+        [SerializeField] bool useNative = false;
+        [SerializeField] string nativeID;
 
-		//[SerializeField]
-		//private string adUnityAppID_android = "";
+        public bool EnableLog => enableLog;
+		public bool UseTestID => useTestID;
+        public bool IsBlockAds { get => isBlockAds; set => isBlockAds = value; }
+        public bool RequestOnLoadFailed => requestOnLoadFailed;
 
-		//[SerializeField]
-		//private string adUnityAppID_iOS = "";
-
-		public static AdmobConfig Instance
-		{
-			get
-			{
-				if ((Object)(object)_instance != (Object)null)
-				{
-					return _instance;
-				}
-				_instance = Resources.Load<AdmobConfig>("AdmobConfig");
-				if ((Object)(object)_instance == (Object)null)
-				{
-					Debug.LogError((object)"[Ads] AdmobConfig file not found at Resources/AdmobConfig");
-				}
-				return _instance;
-			}
-		}
-
-	//	public string AdUnityAppID => IsAndroid ? adUnityAppID_android : adUnityAppID_iOS;
-
-		private bool IsAndroid => (int)Application.platform == 11 || (int)Application.platform == 7;
-
-		public string AppID_Android => (!UseTestID) ? appID_android : "ca-app-pub-3940256099942544~3347511713";
-
-		public string AppID_iOS => (!UseTestID) ? appID_iOS : "ca-app-pub-3940256099942544~1458002511";
-
-		public string AppID
-		{
-			get
-			{
-				if (IsAndroid)
-				{
-					return AppID_Android;
-				}
-				return AppID_iOS;
-			}
-		}
-
-		public bool UseRewardAd => useRewardVideoAd;
-
-		public string RewardID
-		{
-			get
-			{
-				if (!useRewardVideoAd)
-				{
-					return string.Empty;
-				}
-				if (IsAndroid)
-				{
-					return (!UseTestID) ? reward_ID_android : "ca-app-pub-3940256099942544/5224354917";
-				}
-				return (!UseTestID) ? reward_ID_ios : "ca-app-pub-3940256099942544/1712485313";
-			}
-		}
-		public bool UseInterstitialAd => useInterstitialAd;
-
-		public string InterID
-		{
-			get
-			{
-				if (!useInterstitialAd)
-				{
-					return string.Empty;
-				}
-				if (IsAndroid)
-				{
-					return (!UseTestID) ? inter_ID_android : "ca-app-pub-3940256099942544/1033173712";
-				}
-				return (!UseTestID) ? inter_ID_iOS : "ca-app-pub-3940256099942544/4411468910";
-			}
-		}
-	
 		public bool UseBannerAd => useBannerAd;
+		public BannerSizeOp BannerSize => bannerSize;
+		public bool ShowBannerOnBottom => showBannerOnBottom;
+		public bool AutoShowBanner => autoShowBanner;
+
+		public bool UseInterstitialAd => useInterstitialAd;
+		public float Inter_Interval => inter_interval;
+
+		public bool UseRewardVideoAd => useRewardVideoAd;
+		public float Rv_interval => rv_interval;
+
+		public bool UseAOA => useAOA;
+
+		public string AppId
+		{
+			get
+			{
+				if (UseTestID)
+				{
+					if (Master.IsAndroid)
+					{
+						return "ca-app-pub-3940256099942544~3347511713";
+					}
+					else
+					{
+						return "ca-app-pub-3940256099942544~1458002511";
+					}
+				}
+				else
+				{
+					return appID;
+				}
+			}
+		}
 
 		public string BannerID
 		{
@@ -156,17 +104,131 @@ namespace SCN.Ads
 				{
 					return string.Empty;
 				}
-				if (IsAndroid)
+
+				if (useTestID)
 				{
-					return (!UseTestID) ? bannerID_android : "ca-app-pub-3940256099942544/6300978111";
+					if (Master.IsAndroid)
+					{
+						return "ca-app-pub-3940256099942544/6300978111";
+					}
+					else
+					{
+						return "ca-app-pub-3940256099942544/2934735716";
+					}
 				}
-				return (!UseTestID) ? bannerID_iOS : "ca-app-pub-3940256099942544/2934735716";
+				else
+				{
+					return bannerID;
+				}
 			}
 		}
 
-		public bool ShowBannerOnBottom => showBannerOnBottom;
+		public string InterID
+		{
+			get
+			{
+				if (!useInterstitialAd)
+				{
+					return string.Empty;
+				}
 
-		public bool AutoShowBanner => autoShowBanner;
+				if (useTestID)
+				{
+					if (Master.IsAndroid)
+					{
+						return "ca-app-pub-3940256099942544/1033173712";
+					}
+					else
+					{
+						return "ca-app-pub-3940256099942544/4411468910";
+					}
+				}
+				else
+				{
+					return interID;
+				}
+			}
+		}
 
-	}
+		public string RewardVideoID
+		{
+			get
+			{
+				if (!useRewardVideoAd)
+				{
+					return string.Empty;
+				}
+
+				if (useTestID)
+				{
+					if (Master.IsAndroid)
+					{
+						return "ca-app-pub-3940256099942544/5224354917";
+					}
+					else
+					{
+						return "ca-app-pub-3940256099942544/1712485313";
+					}
+				}
+				else
+				{
+					return rewardVideoID;
+				}
+			}
+		}
+		
+        public string AOAID
+		{
+			get
+			{
+				if (!UseAOA)
+				{
+					return string.Empty;
+				}
+
+				if (useTestID)
+				{
+					if (Master.IsAndroid)
+					{
+						return "ca-app-pub-3940256099942544/5354046379";
+					}
+					else
+					{
+						return "ca-app-pub-3940256099942544/6978759866";
+					}
+				}
+				else
+				{
+					return aoaID;
+				}
+			}
+		}
+        public string NativeID
+        {
+            get
+            {
+                if (!useNative)
+                {
+                    return string.Empty;
+                }
+
+                if (useTestID)
+                {
+                    if (Master.IsAndroid)
+                    {
+                        return "ca-app-pub-3940256099942544/5354046379";
+                    }
+                    else
+                    {
+                        return "ca-app-pub-3940256099942544/6978759866";
+                    }
+                }
+                else
+                {
+                    return nativeID;
+                }
+            }
+        }
+
+    }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using SCN;
+using SCN.Ads;
 
 public class ItemLevelJigsaw : MonoBehaviour
 {

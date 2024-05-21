@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using SCN;
 using Coffee.UIExtensions;
+using SCN.Ads;
 
 public class LevelManager : MonoBehaviour
 {
@@ -59,7 +60,7 @@ public class LevelManager : MonoBehaviour
         tweenDelay?.Kill();
         if (AdsManager.Instance.HasInters)
         {
-            AdsManager.Instance.ShowInterstitial(() =>
+            AdsManager.Instance.ShowInterstitial((a) =>
             {
                 EventDispatcher.Instance.Dispatch(new EventKey.OnCloseLevelJigsaw());
              //   FirebaseManager.Instance.WatchInter("Jigsaw");
@@ -191,7 +192,7 @@ public class LevelManager : MonoBehaviour
         tweenDelay= DOVirtual.DelayedCall(2.5f,()=> {
             if (AdsManager.Instance.HasInters)
             {
-                AdsManager.Instance.ShowInterstitial(() =>
+                AdsManager.Instance.ShowInterstitial((a) =>
                 {
                     EventDispatcher.Instance.Dispatch(new EventKey.OnCloseLevelJigsaw());
                  //   FirebaseManager.Instance.WatchInter("Jigsaw");

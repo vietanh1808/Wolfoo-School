@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using SCN.IAP;
+using SCN.Ads;
 
 public class IntroPanel : Panel
 {

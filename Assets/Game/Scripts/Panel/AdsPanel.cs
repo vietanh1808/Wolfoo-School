@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using System;
 using SCN;
+using SCN.Ads;
 
 public class AdsPanel : Panel
 {

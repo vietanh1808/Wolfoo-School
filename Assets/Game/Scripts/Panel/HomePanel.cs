@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using SCN.Common;
 using DG.Tweening;
+using SCN.Ads;
 
 public class HomePanel : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
@@ -125,7 +126,7 @@ public class HomePanel : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
         gameObject.SetActive(false);
         if (AdsManager.Instance.HasInters)
         {
-            AdsManager.Instance.ShowInterstitial(() =>
+            AdsManager.Instance.ShowInterstitial((a) =>
             {
                 FirebaseManager.instance.LogWatchAds("Inters");
                 GUIManager.instance.OpenPanel(PanelType.Intro);

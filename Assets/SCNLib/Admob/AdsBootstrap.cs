@@ -1,9 +1,12 @@
-﻿public partial class Bootstrap
+﻿namespace SCN.Ads
 {
-
-    partial void PreloadAds()
+    public partial class Bootstrap
     {
-        AdsManager.Instance.Preload(transform);
-    }
 
+        partial void PreloadAds()
+        {
+            AdsManager.Instance.Preload(transform);
+        }
+
+    }
 }

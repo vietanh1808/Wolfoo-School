@@ -56,13 +56,20 @@ namespace SCN.Common
 
             while (currentTime > 0)
             {
-                while (PauseClock)
-                    yield return null;
-
                 if (isUsingUnScaleTime)
                     yield return new WaitForSecondsRealtime(1);
                 else
                     yield return new WaitForSeconds(1);
+
+				if (PauseClock)
+				{
+                    yield return new WaitUntil(() => !PauseClock);
+
+                    if (isUsingUnScaleTime)
+                        yield return new WaitForSecondsRealtime(1);
+                    else
+                        yield return new WaitForSeconds(1);
+                }
 
                 currentTime--;
                 OnTimeChange?.Invoke(currentTime);

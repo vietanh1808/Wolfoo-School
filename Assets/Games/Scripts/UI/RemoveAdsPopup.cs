@@ -6,6 +6,8 @@ using UnityEngine.Purchasing;
 using Firebase.Analytics;
 using DG.Tweening;
 using SCN;
+using SCN.Ads;
+
 public class RemoveAdsPopup : MonoBehaviour
 {
 

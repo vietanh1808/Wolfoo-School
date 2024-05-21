@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using SCN.Ads;
 
 public class ShapeMode : Panel
 {
@@ -64,7 +65,7 @@ public class ShapeMode : Panel
                     //OnNextModeGalaxy(session);
                 if (AdsManager.Instance.HasInters)
                 {
-                    AdsManager.Instance.ShowInterstitial(() =>
+                    AdsManager.Instance.ShowInterstitial((a) =>
                     {
                         OnNextModeGalaxy(session);
                     });

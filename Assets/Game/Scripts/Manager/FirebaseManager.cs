@@ -4,6 +4,7 @@ using UnityEngine;
 using Firebase;
 using Firebase.Analytics;
 using System.Linq;
+using SCN.FirebaseLib.FA;
 
 public class FirebaseManager : MonoBehaviour
 {

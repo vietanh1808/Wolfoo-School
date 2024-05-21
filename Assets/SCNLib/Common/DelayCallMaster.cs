@@ -28,15 +28,8 @@ namespace SCN.Common
 
         public static IEnumerator RepeatCall(float timeRate, System.Action action, bool isUsingUnscaleTime = false)
         {
-            var firstFrame = true;
             while (true)
             {
-                if (firstFrame)
-                {
-                    firstFrame = false;
-                    yield return null;
-                }
-
                 action?.Invoke();
                 yield return isUsingUnscaleTime ? (object)new WaitForSecondsRealtime(timeRate) : new WaitForSeconds(timeRate);
             }
